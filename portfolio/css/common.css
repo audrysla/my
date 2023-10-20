@@ -26,14 +26,18 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
 .about table td{height:50px;padding-bottom:50px;}
 .about table td a{color:#3380f5}
 
-.skill{background:#0C4A60;color:#fff;}
+.skill{background:#ED7458;color:#fff;}
 .skill ul{}
 .skill ul li{position:relative;display:flex;}
 .skill ul li+li{margin-top:15px;}
-.skill ul li em{width:130px;display:block;text-align:center;}
-.skill ul li em.per{width:auto;position:absolute;top:0;right:0;color:#333;}
-.skill ul li span{position:relative;flex:1;background:#eeeff1;}
-.skill ul li span i{position:absolute;top:0;left:0;bottom:0;font-size:0;color:transparent;background:gold;}
+.skill ul li em{width:150px;display:block;text-align:center;}
+.skill ul li em.per{width:auto;position:absolute;top:0;right:0;color:#fff;}
+.skill ul li span{position:relative;flex:1;background:rgb(236, 164, 135)}
+.skill ul li span i{
+    position:absolute;top:0;left:0;bottom:0;font-size:0;color:transparent;background:#eeeff1;width:0;
+    border-top-right-radius: 10px;border-bottom-right-radius: 10px;
+    transition:width 2s .3s cubic-bezier(0.61, 1, 0.88, 1);
+}
 
 .work_list .thumb{position:relative;display:block;flex-basis:250px;height:250px;overflow:hidden;border:2px #eee solid;}
 .work_list .thumb img{width:150%;position:absolute;top:0;left:50%;transform:translateX(-50%)}
