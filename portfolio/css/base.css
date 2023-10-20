@@ -1,7 +1,7 @@
 /* kmk 20140513 */
 
 @charset "utf-8";
-
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR:wght@300;600;900&family=Roboto&display=swap');
 html{width:100%;height:100%;}
 body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0;-webkit-text-size-adjust:none;}
 h1,h2,h3,h4,h5,h6{
@@ -12,7 +12,13 @@ h1,h2,h3,h4,h5,h6{
 	font-style: inherit;
 	font-weight: inherit; 
 }
-body{position:relative;height:100%;background-color:#fff;font-size:12px;color:#464646; font-family:'Nanum Gothic', '돋움', dotum, Helvetica,AppleGothic,sans-serif;} 
+body{
+	position:relative;height:100%;background-color:#fff;font-size:12px;color:#464646; 
+	/* font-family: 'Nanum Gothic', sans-serif; */
+	/* font-family: 'Noto Sans KR', sans-serif; */
+	font-family: 'Roboto', sans-serif;
+	font-size:16px;
+} 
 section,nav,article,aside,hgroup,header,footer {display:block}
 input, textarea, select, button, table, select {line-height:inherit;}
 img, fieldset {border:0;vertical-align:top;} 
@@ -34,13 +40,13 @@ caption {visibility:hidden; margin:0; padding:0; width:0; height:0; overflow:hid
 html:first-child select {padding-right:6px; height:20px;} /* Opera 9 & Below Fix */
 hr {display:none !important; visibility:hidden;}
 input, textarea, button {line-height: 1.2; /* 입력폼에서 춤추지 않는 최소 줄간 1.2 */ vertical-align: middle;}
-
-/* 테이블 스타일 초기화 
+i{font-style: normal;}
+/*테이블 스타일 초기화 */
 table {border-collapse:collapse;border-spacing:0;table-layout:fixed;width:100%;}
 table {border:0;width:100%;}
-table th{word-wrap:break-word}
-table td{word-wrap:break-word}
-*/
+table th{word-wrap:break-word;font-weight:bold;font-family: 'Nanum Gothic', sans-serif;}
+table td{word-wrap:break-word;font-family: 'Nanum Gothic', sans-serif;}
+
 .abs {position: absolute;}
 .f14 {font-size: 14px;letter-spacing:-1px;}
 .f16 {font-size: 16px;letter-spacing:-1px;}
@@ -143,41 +149,3 @@ input[type='file']{height:23px; }
 .input300{width:300px;}
 .input350{width:350px;}
 .input400{width:400px;}
-
-/* 버튼 */
-.btn01{display:inline-block;width:62px;line-height:26px;text-align:center;color:#5d5c5c;cursor:pointer;background:url(../images/btn/btn01.png) no-repeat 0 0px;}
-.btn01:hover{background:url(../images/btn/btn01_hover.png) no-repeat 0 0px;}
-.btn02{display:inline-block;width:62px;line-height:17px;text-align:center;color:#fff;font-size:11px;cursor:pointer;background:url(../images/btn/btn02.png) no-repeat 0 0px;}
-.btn03{display:inline-block;width:62px;line-height:17px;text-align:center;color:#fff;font-size:11px;cursor:pointer;background:url(../images/btn/btn03.png) no-repeat 0 0px;}
-.btn04{display:inline-block;width:82px;line-height:17px;text-align:center;color:#fff;font-size:11px;cursor:pointer;background:url(../images/btn/btn04.png) no-repeat 0 0px;}
-
-
-/* 하단 무료상담 공통폼 */
-.bot_form{margin-top:100px;width:748px;border:1px #00a3c4 solid;border-bottom:0;}
-.bot_form table{width:100%;}
-.bot_form table tr,td{border-bottom:1px #c5cbe3 solid;}
-.bot_form table th{color:#4a4949;padding:15px 0;font-weight:bold;background:#f1f1f1;border-right:1px #c5cbe3 solid;}
-.bot_form table td{padding:5px 0 5px 15px;border-right:1px #c5cbe3 solid;background-color:#fafafa;}
-.bot_form table textarea{color:#000;width:320px;border:1px #bcbaba solid;}
-.bot_form table label{color:#000;margin-left:5px;margin-right:25px;}
-.bot_form .top_p{border-bottom:12px #00a3c4 solid;}
-.bot_form table input[type='text']{width:200px;height:24px;}
-.bot_form table select{width:207px;height:24px;}
-
-table.table01{width:100%;}
-table.table01 th{padding-left:5px;text-align:left;font-weight:bold;}
-table.table01 td{padding:3px 0 0 5px;border:0;}
-
-table.table02{width:100%;border-top:2px #0c4999 solid;}
-table.table02 th{padding:8px 0 7px 0;font-weight:bold;border-bottom:1px #0192d1 solid;background-color:#b8dbfc;}
-table.table02 td{padding:8px 0;text-align:center;border-bottom:1px #d9d9d9 solid;}
-table.table02 td.align_left{text-align:left;padding-left:10px;}
-table.table02 td a{text-decoration:underline;}
-
-table.table03{width:100%;border-top:1px #0c4999 solid;}
-table.table03 th{height:30px;border-bottom:1px #fff solid;font-weight:bold;background-color:#b8dbfc;}
-table.table03 th.left{text-align:left;padding-left:10px;}
-table.table03 th.right{text-align:left;padding-right:10px;}
-table.table03 td{padding:5px;border-bottom:1px #d9d9d9 solid;} 
-table.table03 td a{text-decoration:underline;}
-
