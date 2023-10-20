@@ -12,22 +12,25 @@ header nav a+a{margin-left:15px;}
 article .innerWrap{padding:60px 0;}
 article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;text-align: center;text-transform:uppercase }
 /* article h2:after{content:'';position:absolute;top:-14px;left:50%;display:block;width:34px;height:5px;background:#333;transform:translateX(-50%)} */
-.main{position:relative;height:600px;display:flex;justify-content: center;align-items: center;background-color: #57648C;}
+.main{position:relative;height:650px;display:flex;justify-content: center;align-items: center;background-color: #57648C;}
 /* .main:after{content:'';z-index:-1;position:absolute;top:0;left:0;right:0;bottom:0;background:url(../images/background1.jpg) no-repeat 0 0;background-size:cover;opacity:.7;} */
 .main em{font-family: 'Noto Sans KR', sans-serif;display:block;text-align: center;font-weight:900;font-size:52px;color:#fff;text-shadow: 3px 3px rgba(100,100,100,.5)}
-.main i{line-height:32px;font-size:1.3rem;display:block;margin-top:50px;color:#fff;text-align:center;}
-.flexWrap{display:flex;justify-content: space-between;}
-.flexWrap .thumb{width:200px;height:200px;background:#eee;}
+.main p{line-height:38px;font-size:1.3rem;margin-top:50px;color:#fff;text-align:center;}
 
 /* .about{background:#F6C026;color:#fff;} */
+.flexWrap{display:flex;justify-content: space-between;}
+.flexWrap .thumb{flex-basis: 240px;}
+.flexWrap table{flex:1;}
+.about .thumb{display: flex;align-items: center;background-color: #eee;}
+.about .thumb img{width:100%;}
 .about table{max-width: 800px;}
 .about table th{font-size:18px;height:20px;text-align: left;}
 .about table th span{vertical-align: middle;}
-.about table td{height:50px;padding-bottom:50px;}
+.about table td{font-size: 18px;line-height:28px;height:50px;padding-top:10px;}
 .about table td a{color:#3380f5}
+.about table tr:nth-child(2) td{padding-bottom:50px}
 
 .skill{background:#ED7458;color:#fff;}
-.skill ul{}
 .skill ul li{position:relative;display:flex;}
 .skill ul li+li{margin-top:15px;}
 .skill ul li em{width:150px;display:block;text-align:center;}
