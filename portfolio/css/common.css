@@ -57,15 +57,19 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
 footer{height:150px;background-color: #F6C026;}
 
 @media (max-width: 768px){
-    header{padding:0 15px;}
+    header{padding:0 10px;}
     header a{font-size:1.1rem !important;}
     header .innerWrap{height:50px;}
+    header nav a+a {
+        margin-left: 10px;
+    }
     .main{height:auto;padding:80px 0 30px 0;}
     .main em{font-size:38px;}
     .main p {
         line-height: 24px;
         font-size: 1rem;
     }
+    .main p br{display:none}
     article .innerWrap{padding:30px 15px;}
     h1{font-size:18px;text-align: center;}
 
@@ -74,10 +78,19 @@ footer{height:150px;background-color: #F6C026;}
     .about ul span{margin-bottom:5px;font-size: 18px;font-family: 'Nanum Gothic', sans-serif;}
     .about ul span em{margin-right:5px;}
     .about ul{max-width:430px;margin:0 auto;}
-    .about ul li{flex:1 1 50%}
+    .about ul li{
+        flex:1 1 50%;overflow: hidden;
+    }
     .about ul em {
         font-size: 16px;
         line-height: 22px;
+    }
+    .about ul em a{
+        display:block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        word-break: break-all;
     }
     .about ul li:nth-child(odd) > em{padding-bottom:20px}
     .material-symbols-outlined{font-size: 24px !important;}
