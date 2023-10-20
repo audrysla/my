@@ -34,7 +34,7 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
 .skill ul li{position:relative;display:flex;}
 .skill ul li+li{margin-top:15px;}
 .skill ul li em{width:150px;display:block;text-align:center;}
-.skill ul li em.per{width:auto;position:absolute;top:0;right:0;color:#fff;}
+.skill ul li em.per{width:auto;position:absolute;top:0;right:0;color:#333;}
 .skill ul li span{position:relative;flex:1;background:rgb(236, 164, 135)}
 .skill ul li span i{
     position:absolute;top:0;left:0;bottom:0;font-size:0;color:transparent;background:#eeeff1;width:0;
@@ -52,3 +52,33 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
 .material-symbols-outlined{vertical-align: -4px; font-size:36px !important;}
 .more{display:block;background: #ED7458;color:#fff;text-align:center;width:150px;padding:10px 50px;margin:50px auto;border-radius:20px;}
 footer{height:150px;background-color: #F6C026;}
+
+@media (max-width: 768px){
+    header{padding:0 15px;}
+    .main{height:auto;padding:80px 0 30px 0;}
+    .main em{font-size:38px;}
+    .main p {
+        line-height: 24px;
+        font-size: 1rem;
+    }
+    article .innerWrap{padding:30px 15px;}
+    nav{display:none;}
+    h1{flex-basis: 100%;font-size:18px;text-align: center;}
+    .about .thumb{display:none;}
+    .about table th{font-size: 16px;}
+    .about table td {
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .material-symbols-outlined{font-size: 24px !important;}
+    article h2 {
+        position: relative;
+        margin-bottom:30px;
+        font-size: 30px;
+    }
+    .skill ul li em {
+        width: 100px
+    }
+    .work_list li{display:block;}
+    .work_list li p{margin-top:15px;}
+}
