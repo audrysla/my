@@ -36,7 +36,7 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
 .skill ul li{position:relative;display:flex;padding-right: 10px;}
 .skill ul li+li{margin-top:15px;}
 .skill ul li em{width:100px;display:block;text-align: right;padding-right: 10px;}
-.skill ul li em.per{width:auto;position:absolute;top:0;right:0;color:#333;}
+.skill ul li em.per{width:auto;position:absolute;top:0;right:0;color:#fff;text-shadow: 1px 1px rgba(100,100,100,.3)}
 .skill ul li span{position:relative;flex:1;background:rgb(236, 164, 135)}
 .skill ul li span i{
     position:absolute;top:0;left:0;bottom:0;font-size:0;color:transparent;background:#eeeff1;width:0;

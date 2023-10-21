@@ -8,13 +8,37 @@ let x = true;
 let i = document.querySelectorAll(".skill ul li i");
 let t = document.querySelectorAll(".skill ul li .per");
 
+// 스크롤 이동
+const goTo = (offset) =>{
+	window.scrollTo({
+		top : offset,
+		left : 0,
+		behavior: 'smooth'
+	});
+}
+
+// skill 숫자 증가
+const interval = (num, index) =>{
+	let count = 0;
+	const itvl = setInterval(() =>{
+		if(count <= num){
+			t[index].innerText = `${count}%`;
+			count+=1;
+		}else{
+			clearInterval(itvl)
+		}
+	},20);
+}
+
+// skill 애니
 window.addEventListener("scroll", function (e) {
 	// console.log(skill.getBoundingClientRect().top)
 	if(skill.getBoundingClientRect().top <= window.innerHeight){
 		if(x){
 			i.forEach((item, index) =>{
 				item.style.width = `${per[index]}%`;
-				t[index].innerText = `${per[index]}%`;
+				// t[index].innerText = `${per[index]}%`;
+				interval(per[index], index)
 			});
 		}
 		x = false;
@@ -22,20 +46,13 @@ window.addEventListener("scroll", function (e) {
 	about.getBoundingClientRect().top < 0+header.clientHeight ? header.classList.add('bg') : header.classList.remove('bg');
 });
 
+// gnb 클릭 이동
 nav.forEach((item, index) =>{
 	item.addEventListener('click', function(){
-		window.scrollTo({
-			top : article[index+1].offsetTop-header.clientHeight,
-			left : 0,
-			behavior: 'smooth'
-		});
+		goTo(article[index+1].offsetTop-header.clientHeight);
 	});
 });
 
 document.querySelector("header h1 a").addEventListener('click',() =>{
-	window.scrollTo({
-		top : 0,
-		left : 0,
-		behavior: 'smooth'
-	});
+	goTo(0);
 });
