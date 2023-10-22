@@ -11,6 +11,7 @@ header h1 a:hover,
 header nav a:hover{color:hsla(0,0%,100%,1);}
 header nav a+a{margin-left:20px;}
 /* 아티클 */
+article{position:relative;overflow:hidden;}
 article .innerWrap{padding:60px 0;}
 article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;text-align: center;text-transform:uppercase }
 .main{position:relative;height:600px;display:flex;justify-content: center;align-items: center;background-color: #57648C;}
@@ -55,6 +56,18 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
 .material-symbols-outlined{vertical-align: -4px; font-size:36px !important;}
 .more{display:block;background: #ED7458;color:#fff;text-align:center;width:150px;padding:10px 50px;margin:50px auto;border-radius:20px;}
 footer{height:150px;background-color: #F6C026;}
+
+.parallax-div{position:absolute;top:0;left:0;bottom:0;right:0;}
+.parallax-div .material-symbols-outlined{font-size:100px !important;position:absolute;transform:translateX(-50%);transition:transform .3s;opacity:.5}
+.parallax-div span:nth-child(1){top:30%;left:10%}
+.parallax-div span:nth-child(2){top:100%;left:25%}
+.parallax-div span:nth-child(3){top:45%;left:45%;}
+.parallax-div span:nth-child(4){top:80%;left:65%;}
+.parallax-div span:nth-child(5){top:5%;left:85%}
+.parallax-div span:nth-child(6){top:120%;left:90%}
+.parallax-div span:nth-child(7){top:135%;left:0%}
+.parallax-div span:nth-child(8){top:150%;left:45%}
+/* .parallax-div span:nth-child(9){top:70%;left:90%} */
 
 @media (max-width: 768px){
     header{padding:0 10px;}

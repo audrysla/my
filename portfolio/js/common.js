@@ -1,3 +1,4 @@
+const winHi = window.innerHeight;
 const skill = document.querySelector(".skill");
 const about = document.querySelector(".about");
 const header = document.querySelector("header");
@@ -33,7 +34,9 @@ const interval = (num, index) =>{
 // skill 애니
 window.addEventListener("scroll", function (e) {
 	// console.log(skill.getBoundingClientRect().top)
-	if(skill.getBoundingClientRect().top <= window.innerHeight){
+	if(skill.getBoundingClientRect().top <= winHi){
+		pr.init();
+		pr.action();
 		if(x){
 			i.forEach((item, index) =>{
 				item.style.width = `${per[index]}%`;
@@ -56,3 +59,34 @@ nav.forEach((item, index) =>{
 document.querySelector("header h1 a").addEventListener('click',() =>{
 	goTo(0);
 });
+
+const item = document.querySelectorAll(".parallax-div span");
+const itemTop = [];
+for(let i = 0;i<=item.length-1;i++){
+	itemTop[i] = item[i].offsetTop;
+}
+
+const pr = {
+	init : function(){
+		this.items = document.querySelectorAll(".parallax-div span");
+	},
+	action : function(){
+				// console.log(item[0].offsetTop)
+		window.addEventListener("scroll", function (e) {			
+			const skillTop = skill.getBoundingClientRect().top;
+			// for(var i=0;i<=9;i++){
+			// 	item[i].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1501}px, 0)`
+			// }			
+			item[0].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1501}px, 0)`
+			item[1].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.2001}px, 0)`
+			item[2].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1001}px, 0)`
+			item[3].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.2001}px, 0)`
+			item[4].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.0801}px, 0)`
+			item[5].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.2001}px, 0)`
+			item[6].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.2501}px, 0)`
+			item[7].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.2501}px, 0)`
+			// item[8].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1501}px, 0)`			
+		})
+	}
+} 
+
