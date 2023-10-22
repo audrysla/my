@@ -35,6 +35,8 @@ const interval = (num, index) =>{
 window.addEventListener("scroll", function (e) {
 	// console.log(skill.getBoundingClientRect().top)	
 	if(skill.getBoundingClientRect().top <= winHi){		
+		parallaxEv.init();
+parallaxEv.action();
 		if(x){
 			i.forEach((item, index) =>{
 				item.style.width = `${per[index]}%`;
@@ -87,5 +89,4 @@ const parallaxEv = {
 		})
 	}
 }
-parallaxEv.init();
-parallaxEv.action();
+
