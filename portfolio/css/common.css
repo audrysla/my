@@ -61,7 +61,7 @@ footer{height:150px;background-color: #F6C026;}
 .parallax-div .material-symbols-outlined{
     font-size:100px !important;position:absolute;
     transform:translateX(-50%);
-    /* transition:transform .3s; */
+    transition:transform .3s;
     opacity:.3
 }
 .parallax-div span:nth-child(1){top:30%;left:10%}
