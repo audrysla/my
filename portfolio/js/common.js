@@ -31,12 +31,12 @@ const interval = (num, index) =>{
 	},20);
 }
 
+
+
 // skill 애니
 window.addEventListener("scroll", function (e) {
-	// console.log(skill.getBoundingClientRect().top)
-	if(skill.getBoundingClientRect().top <= winHi){
-		pr.init();
-		pr.action();
+	// console.log(skill.getBoundingClientRect().top)	
+	if(skill.getBoundingClientRect().top <= winHi){		
 		if(x){
 			i.forEach((item, index) =>{
 				item.style.width = `${per[index]}%`;
@@ -66,7 +66,7 @@ for(let i = 0;i<=item.length-1;i++){
 	itemTop[i] = item[i].offsetTop;
 }
 
-const pr = {
+const parallaxEv = {
 	init : function(){
 		this.items = document.querySelectorAll(".parallax-div span");
 	},
@@ -90,3 +90,5 @@ const pr = {
 	}
 } 
 
+parallaxEv.init();
+parallaxEv.action();
