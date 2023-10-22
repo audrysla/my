@@ -31,13 +31,10 @@ const interval = (num, index) =>{
 	},20);
 }
 
-let scr = skill.getBoundingClientRect().top <= winHi;
-
-
 // skill 애니
 window.addEventListener("scroll", function (e) {
 	// console.log(skill.getBoundingClientRect().top)	
-	if(scr){		
+	if(skill.getBoundingClientRect().top <= winHi){		
 		if(x){
 			i.forEach((item, index) =>{
 				item.style.width = `${per[index]}%`;
@@ -89,8 +86,6 @@ const parallaxEv = {
 			// item[8].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1501}px, 0)`			
 		})
 	}
-} 
-if(scr){
-	parallaxEv.init();
-	parallaxEv.action();
 }
+parallaxEv.init();
+parallaxEv.action();
