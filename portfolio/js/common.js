@@ -31,12 +31,13 @@ const interval = (num, index) =>{
 	},20);
 }
 
+let scr = skill.getBoundingClientRect().top <= winHi;
 
 
 // skill 애니
 window.addEventListener("scroll", function (e) {
 	// console.log(skill.getBoundingClientRect().top)	
-	if(skill.getBoundingClientRect().top <= winHi){		
+	if(scr){		
 		if(x){
 			i.forEach((item, index) =>{
 				item.style.width = `${per[index]}%`;
@@ -79,8 +80,8 @@ const parallaxEv = {
 			// }			
 			item[0].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1501}px, 0)`
 			item[1].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.2001}px, 0)`
-			item[2].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1001}px, 0)`
-			item[3].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.2001}px, 0)`
+			item[2].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1401}px, 0)`
+			item[3].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1501}px, 0)`
 			item[4].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.0801}px, 0)`
 			item[5].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.2001}px, 0)`
 			item[6].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.2501}px, 0)`
@@ -89,6 +90,7 @@ const parallaxEv = {
 		})
 	}
 } 
-
-parallaxEv.init();
-parallaxEv.action();
+if(scr){
+	parallaxEv.init();
+	parallaxEv.action();
+}
