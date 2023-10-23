@@ -77,14 +77,14 @@ const parallaxEv = {
 			// for(var i=0;i<=9;i++){
 			// 	item[i].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1501}px, 0)`
 			// }			
-			item[0].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1501}px, 0)`
-			item[1].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.2001}px, 0)`
-			item[2].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1401}px, 0)`
-			item[3].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1501}px, 0)`
+			item[0].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.0501}px, 0)`
+			item[1].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.2501}px, 0)`
+			item[2].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.9001}px, 0)`
+			item[3].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.0201}px, 0)`
 			item[4].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.0801}px, 0)`
-			item[5].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.2001}px, 0)`
-			item[6].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.2501}px, 0)`
-			item[7].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.2501}px, 0)`
+			item[5].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1301}px, 0)`
+			item[6].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1001}px, 0)`
+			item[7].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.3501}px, 0)`
 			// item[8].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1501}px, 0)`			
 		})
 	}
