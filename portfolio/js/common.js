@@ -34,8 +34,7 @@ const interval = (num, index) =>{
 
 // skill 애니
 window.addEventListener("scroll", function (e) {
-	// (window.scrollY > 150) ? main.classList.add("static") : main.classList.remove("static");
-
+	// (window.scrollY > 100) ? main.classList.add("static") : main.classList.remove("static");	// 메인 풀화면
 	if(skill.getBoundingClientRect().top <= winHi){		
 		parallaxEv.init();
 		parallaxEv.action();
