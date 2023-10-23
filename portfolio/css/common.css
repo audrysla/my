@@ -68,18 +68,16 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
 .skill ul li{position:relative;display:flex;padding-right: 10px;}
 .skill ul li+li{margin-top:15px;}
 .skill ul li em{width:100px;display:block;text-align: right;padding-right: 10px;}
-.skill ul li em.per{width:auto;position:absolute;top:0;right:0;color:#fff;text-shadow: 1px 1px rgba(100,100,100,.3)}
-.skill ul li span{position:relative;flex:1;background:rgb(236, 164, 135)}
+.skill ul li em.per{width:auto;position:absolute;top:0;right:0;color:#fff;text-shadow: 1px 1px rgba(100,100,100,.6);font-size:14px;margin-right:5px;}
+.skill ul li span{position:relative;height:20px;flex:1;background:rgb(236, 164, 135)}
 .skill ul li span i{
-    position:absolute;top:0;left:0;bottom:0;font-size:0;color:transparent;background:#eeeff1;width:0;
+    position:absolute;top:0;left:0;bottom:0;font-size:0;color:transparent;background:rgba(255,255,255,.9);width:0;
     border-top-right-radius: 10px;border-bottom-right-radius: 10px;
     transition:width 2s .3s cubic-bezier(0.61, 1, 0.88, 1);
 }
 
 
 .work_list .thumb{position:relative;display:block;flex-basis:250px;height:250px;overflow:hidden;border:1px #eee solid;border-radius:10px}
-.work_list .thumb:after{content:'e8f4';color: #333;
-    position: absolute;}
 .work_list .thumb img{width:150%;position:absolute;top:0;left:50%;transform:translateX(-50%);}
 .work_list li{display:flex;gap:50px;}
 .work_list li+li{margin-top:50px;}
