@@ -95,6 +95,7 @@ footer{height:150px;background-color: #F6C026;}
     font-size:100px !important;position:absolute;
     transform:translateX(-50%);
     transition:transform .3s;
+    will-change: transform;
     opacity:.3
 }
 .parallax-div span:nth-child(1){top:75%;left:0%}
