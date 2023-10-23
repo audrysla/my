@@ -1,4 +1,5 @@
 const winHi = window.innerHeight;
+const main = document.querySelector(".main");
 const skill = document.querySelector(".skill");
 const about = document.querySelector(".about");
 const header = document.querySelector("header");
@@ -33,10 +34,11 @@ const interval = (num, index) =>{
 
 // skill 애니
 window.addEventListener("scroll", function (e) {
-	// console.log(skill.getBoundingClientRect().top)	
+	// (window.scrollY > 150) ? main.classList.add("static") : main.classList.remove("static");
+
 	if(skill.getBoundingClientRect().top <= winHi){		
 		parallaxEv.init();
-parallaxEv.action();
+		parallaxEv.action();
 		if(x){
 			i.forEach((item, index) =>{
 				item.style.width = `${per[index]}%`;
