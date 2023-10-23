@@ -81,7 +81,7 @@ footer{height:150px;background-color: #F6C026;}
     header nav a+a {
         margin-left: 10px;
     }
-    .main{height:auto;padding:130px 0 100px 0;}
+    .main{height:400px;}
     .main em{font-size:38px;}
     .main p {
         line-height: 24px;
@@ -117,6 +117,7 @@ footer{height:150px;background-color: #F6C026;}
         margin-bottom:30px;
         font-size: 30px;
     }
+    .skill{padding: 25px 0}
     .skill ul li em {
         width: 80px
     }
