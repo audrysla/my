@@ -89,8 +89,12 @@ window.addEventListener("scroll", function (e) {
 	// 	dogBone.style.willChange = 'auto';
 	// }
 	
-	// 위로가기 버튼
-	(window.scrollY > 400) ? goTop.classList.add("show") : goTop.classList.remove("show")
+	// 위로가기 버튼 나타나기
+	(window.scrollY > 400) ? goTop.classList.add("show") : goTop.classList.remove("show");
+	
+	// 스크롤 맨 아래 감지
+	(window.scrollY+winHi == document.body.scrollHeight) ? goTop.style.transform = "translateY(-80px)" : goTop.style.transform = "translateY(0)";
+	console.log(window.scrollY,document.body.scrollHeight)
 });
 
 // skill 패럴렉스
