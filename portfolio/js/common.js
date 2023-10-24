@@ -93,8 +93,8 @@ window.addEventListener("scroll", function (e) {
 	(window.scrollY > 500) ? goTop.classList.add("show") : goTop.classList.remove("show");
 	
 	// 스크롤 맨 아래 감지
-	(window.scrollY+winHi == document.body.scrollHeight) ? goTop.classList.add("foot") : goTop.classList.remove("foot");
-	// console.log(window.scrollY,document.body.scrollHeight)
+	(window.scrollY+winHi >= document.body.scrollHeight-50) ? goTop.classList.add("foot") : goTop.classList.remove("foot");
+	// console.log(window.scrollY+winHi,document.body.scrollHeight-100)
 });
 
 // skill 패럴렉스
