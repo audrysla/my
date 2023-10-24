@@ -8,6 +8,7 @@ const header = document.querySelector("header");
 const nav = document.querySelectorAll("nav a");
 const skill = document.querySelector(".skill");
 const about = document.querySelector(".about");
+const goTop = document.querySelector(".goTop");
 // skill
 // const dogBone = document.querySelector(".parallax-div .material-symbols-outlined");
 const per = [90, 90, 70, 90, 90, 50, 50]
@@ -50,15 +51,26 @@ nav.forEach((item, index) =>{
 		goTo(article[index+1].offsetTop - header.clientHeight - scrGap);
 	});
 });
+
+// 맨위로
 document.querySelector("header h1 a").addEventListener('click',() =>{
+	goTo(0);
+});
+document.querySelector(".goTop").addEventListener('click',() =>{
 	goTo(0);
 });
 
 if(isMobile()) main.style.height = "100%";
 window.addEventListener("scroll", function (e) {	
+	// 모바일만 메인 영역 풀화면
 	if(isMobile()){		
 		(window.scrollY > scrFlag) ? main.classList.add("static") : main.classList.remove("static");	// 메인 풀화면
 	}
+	
+	// 스크롤 내려갈 때 헤더 백그라운드 주기
+	about.getBoundingClientRect().top < 0+header.clientHeight ? header.classList.add('bg') : header.classList.remove('bg');
+
+	// 스킬 영역 액션
 	if(skill.getBoundingClientRect().top <= winHi-100 && skill.getBoundingClientRect().top + skill.clientHeight > 0){
 		// console.log(skill.getBoundingClientRect().top)
 		// dogBone.style.willChange = 'transform'; 
@@ -76,8 +88,9 @@ window.addEventListener("scroll", function (e) {
 	// if(skill.getBoundingClientRect().top + skill.clientHeight < 0){
 	// 	dogBone.style.willChange = 'auto';
 	// }
-	// 스크롤 내려갈 때 헤더 백그라운드 주기
-	about.getBoundingClientRect().top < 0+header.clientHeight ? header.classList.add('bg') : header.classList.remove('bg');
+	
+	// 위로가기 버튼
+	(window.scrollY > 400) ? goTop.classList.add("show") : goTop.classList.remove("show")
 });
 
 // skill 패럴렉스

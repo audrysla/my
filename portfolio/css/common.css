@@ -124,7 +124,9 @@ footer{height:150px;background-color: #F6C026;}
 .parallax-div span:nth-child(7){top:35%;left:85%}
 .parallax-div span:nth-child(8){top:90%;left:90%;font-size:200px !important;}
 /* .parallax-div span:nth-child(9){top:70%;left:90%} */
-
+.goTop{z-index:100;position:fixed;bottom:50px;right:30px;width:60px;height:60px;transform: translateY(200%);transition: transform .3s;}
+.goTop img{width:100%;}
+.goTop.show{transform: translateY(0);}
 @media (max-width: 768px){
     header{padding:0 10px;}
     header a{font-size:1.1rem !important;}
@@ -182,4 +184,5 @@ footer{height:150px;background-color: #F6C026;}
     .parallax-div .material-symbols-outlined{
         font-size:70px !important;
     }
+    .goTop{right:15px;bottom:30px;width:50px;height:50px;}
 }
