@@ -1,10 +1,11 @@
 const winHi = window.innerHeight;
+const article = document.querySelectorAll("article");
 const main = document.querySelector(".main");
-const skill = document.querySelector(".skill");
-const about = document.querySelector(".about");
 const header = document.querySelector("header");
 const nav = document.querySelectorAll("nav a");
-const article = document.querySelectorAll("article");
+const skill = document.querySelector(".skill");
+const about = document.querySelector(".about");
+// skill
 const per = [90, 90, 70, 90, 90, 50, 50]
 let x = true;
 let i = document.querySelectorAll(".skill ul li i");
@@ -32,7 +33,16 @@ const interval = (num, index) =>{
 	},20);
 }
 
-// skill 애니
+// gnb 클릭 이동
+nav.forEach((item, index) =>{
+	item.addEventListener('click', function(){
+		goTo(article[index+1].offsetTop-header.clientHeight);
+	});
+});
+document.querySelector("header h1 a").addEventListener('click',() =>{
+	goTo(0);
+});
+
 window.addEventListener("scroll", function (e) {
 	// (window.scrollY > 100) ? main.classList.add("static") : main.classList.remove("static");	// 메인 풀화면
 	if(skill.getBoundingClientRect().top <= winHi){		
@@ -51,17 +61,7 @@ window.addEventListener("scroll", function (e) {
 	about.getBoundingClientRect().top < 0+header.clientHeight ? header.classList.add('bg') : header.classList.remove('bg');
 });
 
-// gnb 클릭 이동
-nav.forEach((item, index) =>{
-	item.addEventListener('click', function(){
-		goTo(article[index+1].offsetTop-header.clientHeight);
-	});
-});
-
-document.querySelector("header h1 a").addEventListener('click',() =>{
-	goTo(0);
-});
-
+// skill 패럴렉스
 const parallaxEv = {
 	init : function(){
 		this.items = document.querySelectorAll(".parallax-div span");
