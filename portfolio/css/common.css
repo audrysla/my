@@ -40,11 +40,11 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
     height:100%;box-sizing: border-box;background-color: #57648C;
     transition:height .3s;
 }
-.main .innerWrap{transition:opacity .6s;}
+.main .innerWrap{transition:transform .6s;}
 .main em{font-family: 'Noto Sans KR', sans-serif;display:block;text-align: center;font-weight:900;font-size:52px;color:#fff;text-shadow: 3px 3px rgba(100,100,100,.5)}
 .main p{line-height:38px;font-size:1.3rem;margin-top:50px;color:#fff;text-align:center;}
 .main.static{height:450px;}
-.main.static .innerWrap{opacity:0}
+.main.static .innerWrap{transform: translateY(-100px);}
 .main .arrow{margin-top:20px;text-align:center;color:#fff;}
 .main .arrow span{
     font-size:86px !important;font-weight:bold;opacity: .1;
