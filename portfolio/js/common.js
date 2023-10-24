@@ -47,6 +47,7 @@ window.addEventListener("scroll", function (e) {
 		}
 		x = false;
 	}
+	// 스크롤 내려갈 때 헤더 백그라운드 주기
 	about.getBoundingClientRect().top < 0+header.clientHeight ? header.classList.add('bg') : header.classList.remove('bg');
 });
 
@@ -61,18 +62,16 @@ document.querySelector("header h1 a").addEventListener('click',() =>{
 	goTo(0);
 });
 
-const item = document.querySelectorAll(".parallax-div span");
-const itemTop = [];
-for(let i = 0;i<=item.length-1;i++){
-	itemTop[i] = item[i].offsetTop;
-}
-
 const parallaxEv = {
 	init : function(){
 		this.items = document.querySelectorAll(".parallax-div span");
 	},
 	action : function(){
-				// console.log(item[0].offsetTop)
+		const item = this.items;
+		const itemTop = [];
+		for(let i = 0;i<=item.length-1;i++){
+			itemTop[i] = item[i].offsetTop;
+		}
 		window.addEventListener("scroll", function (e) {			
 			const skillTop = skill.getBoundingClientRect().top;
 			// for(var i=0;i<=9;i++){
