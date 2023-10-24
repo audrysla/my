@@ -90,11 +90,11 @@ window.addEventListener("scroll", function (e) {
 	// }
 	
 	// 위로가기 버튼 나타나기
-	(window.scrollY > 400) ? goTop.classList.add("show") : goTop.classList.remove("show");
+	(window.scrollY > 500) ? goTop.classList.add("show") : goTop.classList.remove("show");
 	
 	// 스크롤 맨 아래 감지
-	(window.scrollY+winHi == document.body.scrollHeight) ? goTop.style.transform = "translateY(-80px)" : goTop.style.transform = "translateY(0)";
-	console.log(window.scrollY,document.body.scrollHeight)
+	(window.scrollY+winHi == document.body.scrollHeight) ? goTop.classList.add("foot") : goTop.classList.remove("foot");
+	// console.log(window.scrollY,document.body.scrollHeight)
 });
 
 // skill 패럴렉스

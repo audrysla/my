@@ -125,7 +125,8 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
 /* .parallax-div span:nth-child(9){top:70%;left:90%} */
 .goTop{z-index:100;position:fixed;bottom:50px;right:30px;width:60px;height:60px;transform: translateY(200%);transition: transform .3s;}
 .goTop img{width:100%;}
-.goTop.show{transform: translateY(0);}
+.goTop.show{transform: translateY(0)}
+.goTop.foot{transform: translateY(-80px)}
 footer{display:flex;justify-content: center;align-items: center; height:100px;background-color: #F6C026;color:#fff;}
 @media (max-width: 768px){
     header{padding:0 10px;}
