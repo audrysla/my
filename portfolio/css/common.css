@@ -127,7 +127,8 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
 .goTop img{width:100%;}
 .goTop.show{transform: translateY(0)}
 .goTop.foot{transform: translateY(-80px)}
-footer{display:flex;justify-content: center;align-items: center; height:100px;background-color: #F6C026;color:#fff;}
+footer{display:flex;justify-content: center;align-items: center; height:100px;background-color: #F6C026;color:#fff;text-align: center;line-height:22px;}
+
 @media (max-width: 768px){
     header{padding:0 10px;}
     header a{font-size:1.1rem !important;}
