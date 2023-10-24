@@ -1,3 +1,6 @@
+const isMobile = () => {
+	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+}
 const winHi = window.innerHeight;
 const article = document.querySelectorAll("article");
 const main = document.querySelector(".main");
@@ -34,25 +37,28 @@ const interval = (num, index) =>{
 	},20);
 }
 
-const scrSum = main.clientHeight - 600;
-const scrGap = 0;
-let move = 0;
+const sizeGap = 0;
+const scrFlag = 0;
+let scrGap = 0;
 // gnb 클릭 이동
 nav.forEach((item, index) =>{
 	item.addEventListener('click', function(){
-		(window.scrollY <= scrGap) ? move = scrSum : move=0;
-		setTimeout(() =>{
-		},200)
-		goTo(article[index+1].offsetTop-header.clientHeight-move);
+		if(isMobile()){	
+			(window.scrollY == 0) ? scrGap = winHi - 500 : scrGap = 0;
+		}
+		// console.log(article[index+1].offsetTop, winHi, winHi-500)
+		goTo(article[index+1].offsetTop - header.clientHeight - scrGap);
 	});
 });
 document.querySelector("header h1 a").addEventListener('click',() =>{
 	goTo(0);
 });
 
-
-window.addEventListener("scroll", function (e) {
-	(window.scrollY > scrGap) ? main.classList.add("static") : main.classList.remove("static");	// 메인 풀화면
+if(isMobile()) main.style.height = "100%";
+window.addEventListener("scroll", function (e) {	
+	if(isMobile()){		
+		(window.scrollY > scrFlag) ? main.classList.add("static") : main.classList.remove("static");	// 메인 풀화면
+	}
 	if(skill.getBoundingClientRect().top <= winHi-100 && skill.getBoundingClientRect().top + skill.clientHeight > 0){
 		// console.log(skill.getBoundingClientRect().top)
 		// dogBone.style.willChange = 'transform'; 
