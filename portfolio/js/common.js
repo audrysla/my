@@ -6,7 +6,7 @@ const nav = document.querySelectorAll("nav a");
 const skill = document.querySelector(".skill");
 const about = document.querySelector(".about");
 // skill
-const dogBone = document.querySelector(".parallax-div .material-symbols-outlined");
+// const dogBone = document.querySelector(".parallax-div .material-symbols-outlined");
 const per = [90, 90, 70, 90, 90, 50, 50]
 let x = true;
 let i = document.querySelectorAll(".skill ul li i");
@@ -34,18 +34,24 @@ const interval = (num, index) =>{
 	},20);
 }
 
+const scrSum = winHi - 450;
+let move = 0;
 // gnb 클릭 이동
 nav.forEach((item, index) =>{
 	item.addEventListener('click', function(){
-		goTo(article[index+1].offsetTop-header.clientHeight);
+		(window.scrollY <= 100) ? move = scrSum : move=0;
+		setTimeout(() =>{
+		},200)
+		goTo(article[index+1].offsetTop-header.clientHeight-move);
 	});
 });
 document.querySelector("header h1 a").addEventListener('click',() =>{
 	goTo(0);
 });
 
+
 window.addEventListener("scroll", function (e) {
-	// (window.scrollY > 100) ? main.classList.add("static") : main.classList.remove("static");	// 메인 풀화면
+	(window.scrollY > 100) ? main.classList.add("static") : main.classList.remove("static");	// 메인 풀화면
 	if(skill.getBoundingClientRect().top <= winHi && skill.getBoundingClientRect().top + skill.clientHeight > 0){
 		// console.log(skill.getBoundingClientRect().top)
 		// dogBone.style.willChange = 'transform'; 
@@ -78,7 +84,7 @@ const parallaxEv = {
 		for(let i = 0;i<=item.length-1;i++){
 			itemTop[i] = item[i].offsetTop;
 		}
-		window.addEventListener("scroll", function (e) {			
+		window.addEventListener("scroll", function (e) {
 			const skillTop = skill.getBoundingClientRect().top;
 			// for(var i=0;i<=9;i++){
 			// 	item[i].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1501}px, 0)`
@@ -91,7 +97,7 @@ const parallaxEv = {
 			item[5].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1301}px, 0)`
 			item[6].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1001}px, 0)`
 			item[7].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.3501}px, 0)`
-			item[8].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1501}px, 0)`			
+			// item[8].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1501}px, 0)`			
 		})
 	}
 }
