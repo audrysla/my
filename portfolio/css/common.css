@@ -25,7 +25,7 @@
 header{z-index:100;position:fixed;top:0;left:0;right:0;}
 header.bg{background-color: rgba(87, 100, 140, .8);}
 header.bg a{color:#fff;}
-header .innerWrap{height:100px;display:flex;justify-content: space-between;align-items: center;padding:0;}
+header .innerWrap{height:80px;display:flex;justify-content: space-between;align-items: center;padding:0;}
 header h1 a,
 header nav a{font-size:1.5rem;font-weight:600;color:hsla(0,0%,100%,.6);}
 header h1 a:hover,
@@ -45,7 +45,7 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
 /* .main.static .arrow{margin-top:-50px;} */
 .main .arrow{margin-top:20px;text-align:center;color:#fff;transition:margin  .3s;}
 .main .arrow span{
-    font-size:100px !important;font-weight:bold;opacity: .1;
+    font-size:86px !important;font-weight:bold;opacity: .1;
     transform: rotate(90deg);
     animation:arrowdown 2s infinite
 }
@@ -123,24 +123,22 @@ footer{height:150px;background-color: #F6C026;}
     header{padding:0 10px;}
     header a{font-size:1.1rem !important;}
     header .innerWrap{height:50px;}
-    header nav a+a {
-        margin-left: 10px;
-    }
-    .main{height:450px;}
+    header nav a+a {margin-left: 10px;}
+    article .innerWrap{padding:30px 15px;}
+    .main{height:auto;}
+    article.main .innerWrap{padding:90px 15px;}
     .main em{font-size:38px;}
     .main p {
         line-height: 24px;
         font-size: 1rem;
     }
     .main p br:nth-child(2){display:none}
-    article .innerWrap{padding:30px 15px;}
     h1{font-size:18px;text-align: center;}
 
     .about .thumb{margin-bottom:40px;height:200px;}
     .about .thumb img{width:100%;}
     .about ul span{margin-bottom:5px;font-size: 18px;font-family: 'Nanum Gothic', sans-serif;}
     .about ul span em{margin-right:5px;}
-    .about ul{max-width:430px;margin:0 auto;}
     .about ul li{
         flex:1 1 50%;overflow: hidden;
     }
