@@ -68,7 +68,7 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
 .skill ul li{position:relative;display:flex;    gap: 10px;}
 .skill ul li+li{margin-top:15px;}
 .skill ul li em{width:100px;display:block;text-align: right;}
-.skill ul li em.per{width:auto;color:#fff;font-size:14px;}
+.skill ul li em.per{width:26px;color:#fff;font-size:14px;white-space: nowrap;}
 .skill ul li span{position:relative;height:20px;flex:1;background:rgb(236, 164, 135)}
 .skill ul li span i{
     position:absolute;top:0;left:0;bottom:0;font-size:0;color:transparent;background:rgba(255,255,255,.9);width:0;
