@@ -48,8 +48,7 @@ window.addEventListener("scroll", function (e) {
 	// (window.scrollY > 100) ? main.classList.add("static") : main.classList.remove("static");	// 메인 풀화면
 	if(skill.getBoundingClientRect().top <= winHi && skill.getBoundingClientRect().top + skill.clientHeight > 0){
 		// console.log(skill.getBoundingClientRect().top)
-		dogBone.style.willChange = 'transform'; 
-		console.log(dogBone.style.willChange)
+		// dogBone.style.willChange = 'transform'; 
 		parallaxEv.init();
 		parallaxEv.action();
 		if(x){
@@ -61,10 +60,9 @@ window.addEventListener("scroll", function (e) {
 		}
 		x = false;
 	}
-	if(skill.getBoundingClientRect().top + skill.clientHeight < 0){
-		dogBone.style.willChange = 'auto';
-		console.log(dogBone.style.willChange)
-	}
+	// if(skill.getBoundingClientRect().top + skill.clientHeight < 0){
+	// 	dogBone.style.willChange = 'auto';
+	// }
 	// 스크롤 내려갈 때 헤더 백그라운드 주기
 	about.getBoundingClientRect().top < 0+header.clientHeight ? header.classList.add('bg') : header.classList.remove('bg');
 });
@@ -93,7 +91,7 @@ const parallaxEv = {
 			item[5].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1301}px, 0)`
 			item[6].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1001}px, 0)`
 			item[7].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.3501}px, 0)`
-			// item[8].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1501}px, 0)`			
+			item[8].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.1501}px, 0)`			
 		})
 	}
 }

@@ -103,6 +103,7 @@ footer{height:150px;background-color: #F6C026;}
 
 .parallax-div{position:absolute;top:0;left:0;bottom:0;right:0;}
 .parallax-div .material-symbols-outlined{
+    will-Change:transform;
     font-size:100px !important;position:absolute;
     transform:translateX(-50%);
     opacity:.3;
