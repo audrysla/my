@@ -96,7 +96,12 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
 .work_list li{display:flex;gap:50px;}
 .work_list li+li{margin-top:50px;}
 .work_list li p{flex:1;font-family: 'Nanum Gothic', sans-serif;line-height: 24px;}
-.work_list li p strong{display:block;font-size:22px;margin-bottom:10px;}
+.work_list li p strong{
+    display:block;font-size:22px;margin-bottom:10px;
+    background: rgba(0,0,0,.3);
+    color: #fff;
+    padding: 5px;
+}
 /* .portfolio{background:#ED7458;color:#fff } */
 
 .more{display:block;background: #ED7458;color:#fff;text-align:center;width:150px;padding:10px 50px;margin:50px auto;border-radius:20px;}
