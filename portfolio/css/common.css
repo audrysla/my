@@ -38,7 +38,7 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
 .main{
     position:relative;display:flex;justify-content: center;align-items: center;
     height:100%;box-sizing: border-box;background-color: #57648C;
-    transition:height .6s;
+    transition:height .3s;
 }
 .main .innerWrap{transition:opacity .6s;}
 .main em{font-family: 'Noto Sans KR', sans-serif;display:block;text-align: center;font-weight:900;font-size:52px;color:#fff;text-shadow: 3px 3px rgba(100,100,100,.5)}
