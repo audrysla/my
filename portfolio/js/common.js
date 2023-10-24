@@ -40,7 +40,7 @@ let move = 0;
 // gnb 클릭 이동
 nav.forEach((item, index) =>{
 	item.addEventListener('click', function(){
-		(window.scrollY <= scrGap) ? move = scrSum : move=0;
+		// (window.scrollY <= scrGap) ? move = scrSum : move=0;
 		setTimeout(() =>{
 		},200)
 		goTo(article[index+1].offsetTop-header.clientHeight-move);
@@ -52,8 +52,8 @@ document.querySelector("header h1 a").addEventListener('click',() =>{
 
 
 window.addEventListener("scroll", function (e) {
-	(window.scrollY > scrGap) ? main.classList.add("static") : main.classList.remove("static");	// 메인 풀화면
-	if(skill.getBoundingClientRect().top <= winHi-250 && skill.getBoundingClientRect().top + skill.clientHeight > 0){
+	// (window.scrollY > scrGap) ? main.classList.add("static") : main.classList.remove("static");	// 메인 풀화면
+	if(skill.getBoundingClientRect().top <= winHi-100 && skill.getBoundingClientRect().top + skill.clientHeight > 0){
 		// console.log(skill.getBoundingClientRect().top)
 		// dogBone.style.willChange = 'transform'; 
 		parallaxEv.init();

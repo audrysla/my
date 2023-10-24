@@ -37,8 +37,8 @@ article .innerWrap{padding:60px 0;}
 article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;text-align: center;text-transform:uppercase }
 .main{
     position:relative;display:flex;justify-content: center;align-items: center;
-    height:100%;box-sizing: border-box;background-color: #57648C;
-    transition:height .3s;
+    height:70%;min-height:550px;box-sizing: border-box;background-color: #57648C;
+    /* transition:height .3s; */
 }
 .main .innerWrap{transition:transform .6s;}
 .main em{font-family: 'Noto Sans KR', sans-serif;display:block;text-align: center;font-weight:900;font-size:52px;color:#fff;text-shadow: 3px 3px rgba(100,100,100,.5)}
