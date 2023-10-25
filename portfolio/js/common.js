@@ -51,7 +51,6 @@ nav.forEach((item, index) =>{
 		goTo(article[index+1].offsetTop - header.clientHeight - scrGap);
 	});
 });
-
 // 맨위로
 document.querySelector("header h1 a").addEventListener('click',() =>{
 	goTo(0);
@@ -126,3 +125,10 @@ const parallaxEv = {
 	}
 }
 
+// 메인 화살표 클릭 이동 추가
+document.querySelector(".arrow").addEventListener('click',() =>{
+	if(isMobile()){	
+		(window.scrollY == 0) ? scrGap = winHi - 500 : scrGap = 0;
+	}
+	goTo(article[1].offsetTop - header.clientHeight - scrGap);
+});
