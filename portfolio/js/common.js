@@ -104,7 +104,7 @@ window.addEventListener("scroll", function (e) {
 	// 스킬 영역 지나면 고정
 	if(parallaxArea <= 0 ){
 		backboard.classList.add('fixed');									// 페럴렉스 영역 고정
-		parallax.querySelector('.backboard').style.height = `${winHi}px`	// 높이값 화면 높이로 지정(풀화면)
+		parallax.querySelector('.backboard').style.height = `${winHi+100}px`	// 높이값 화면 높이로 지정(풀화면)
 	
 		let scrollTop = moveScroll * 0.002;
 		let transformSpeed = 30;
