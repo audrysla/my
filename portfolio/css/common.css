@@ -55,6 +55,7 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
 .flexWrap{display:flex;justify-content: space-between;gap:20px;}
 .flexWrap .thumb{flex-basis: 240px;overflow: hidden;}
 .flexWrap ul{flex:1;}
+.about{background:#fff;}
 .about .thumb{position:relative;display: flex;align-items: center;}
 .about .thumb img{position:absolute;top:0;left:0;}
 .about ul{display:flex;flex-wrap: wrap;max-width: 800px;}
@@ -79,12 +80,12 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
 }
 
 /* .portfolio{background:#ED7458;color:#fff } */
-.portfolio{position:relative;}
+.portfolio{z-index: 1;}
 .portfolio:before{
     content:'';opacity: .1;
-    position:absolute;z-index: -1;
+    position:fixed;z-index: -1;
     top:0;right:0;left:0;bottom:0;
-    background:url(../images/air.png) repeat 50% 50%;background-size:50px;background-attachment: fixed;
+    background:url(../images/air.png) repeat 50% 50%;background-size:50px;/*background-attachment: fixed;*/
 }
 .portfolio h2{color:#000;}
 .work_list .thumb{position:relative;display:block;flex-basis:250px;height:250px;overflow:hidden;border-radius:10px;box-shadow: 2px 5px 15px rgba(100,100,100,.5);}
