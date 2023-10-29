@@ -8,9 +8,10 @@ const header = document.querySelector("header");
 const nav = document.querySelectorAll("nav a");
 const skill = document.querySelector(".skill");
 const about = document.querySelector(".about");
+const portfolio = document.querySelector(".portfolio");
+const footer = document.querySelector("footer");
 const goTop = document.querySelector(".goTop");
 // skill
-// const dogBone = document.querySelector(".parallax-div .material-symbols-outlined");
 const per = [90, 90, 70, 90, 90, 50, 50]
 let x = true;
 let i = document.querySelectorAll(".skill ul li i");
@@ -59,8 +60,11 @@ document.querySelector(".goTop").addEventListener('click',() =>{
 	goTo(0);
 });
 
-if(isMobile()) main.style.height = "100%";
+
+if(isMobile()) main.style.height = "100%";	// 모바일에서만 상단 풀화면
+
 window.addEventListener("scroll", function (e) {	
+
 	// 모바일만 메인 영역 풀화면
 	if(isMobile()){		
 		(window.scrollY > scrFlag) ? main.classList.add("static") : main.classList.remove("static");	// 메인 풀화면
@@ -84,10 +88,136 @@ window.addEventListener("scroll", function (e) {
 		}
 		x = false;
 	}
-	// if(skill.getBoundingClientRect().top + skill.clientHeight < 0){
-	// 	dogBone.style.willChange = 'auto';
-	// }
+
+	const parallax = document.querySelector(".parallax");
+	const backboard = parallax.querySelector('.backboard');
 	
+	// 움직이는 텍스트 요소
+	const t1 = document.querySelector(".t1");
+	const t2 = document.querySelector(".t2");
+	const t3 = document.querySelector(".t3");	
+	
+	let parallaxArea = parallax.getBoundingClientRect().top;	// 패럴렉스 영역 시작점
+	let parallaxBottom = footer.getBoundingClientRect().top;	// 패럴렉스 영역 끝지점(푸터offsetTop)
+	let moveScroll = Math.abs(parallaxArea);					// 패럴렉스 영역에서의 스크롤 기준 값 (0부터 증가)
+
+	// 스킬 영역 지나면 고정
+	if(parallaxArea <= 0 ){
+		backboard.classList.add('fixed');									// 페럴렉스 영역 고정
+		parallax.querySelector('.backboard').style.height = `${winHi}px`	// 높이값 화면 높이로 지정(풀화면)
+	
+		let scrollTop = moveScroll * 0.002;
+		let transformSpeed = 30;
+		// console.log(opcitySpeed.toFixed(3), translateSpeed.toFixed(3))
+
+		// console.log(scrollTop.toFixed(3))
+
+		// text1 액션
+		if(scrollTop <= 3){
+			// opacity 조절			
+			if(scrollTop <= 1){
+				t1.style.opacity = `${scrollTop}`;
+			}else if(scrollTop >= 2){
+				let secondMove = 1 -(scrollTop - 1)+1;
+				t1.style.opacity = `${secondMove}`
+			}else{
+				t1.style.opacity = `1`;
+			}
+			// 위치 조절
+			if(scrollTop*transformSpeed <= 50){
+				t1.style.transform = `translate3d(0,${-scrollTop*transformSpeed}px,0)`;
+			}else{
+				t1.style.transform = `translate3d(0,-50px,0)`;
+			}			
+		}else{
+			t1.style.opacity = `0`
+		}
+		// text2 액션
+		if(scrollTop >= 2 && scrollTop <= 6){
+			scrollTop = scrollTop-2;
+			// opacity 조절
+			if(scrollTop <= 1){
+				t2.style.opacity = `${scrollTop}`;
+			}else if(scrollTop >= 2){
+				let secondMove = 1 -(scrollTop - 1)+1;
+				t2.style.opacity = `${secondMove}`
+			}			else{
+				t2.style.opacity = `1`;
+			}
+			
+			// 위치 조절
+			if(scrollTop*transformSpeed <= 50){
+				t2.style.transform = `translate3d(0,${-scrollTop*transformSpeed}px,0)`;
+			}else{
+				t2.style.transform = `translate3d(0,-50px,0)`;
+			}			
+		}else{
+			t2.style.opacity = `0`
+		}
+		// text3 액션
+		if(scrollTop >= 2 && scrollTop <= 9){
+			scrollTop = scrollTop-2;
+			// opacity 조절
+			if(scrollTop <= 1){
+				t3.style.opacity = `${scrollTop}`;
+			}else{
+				t3.style.opacity = `1`;
+			}
+			// 위치 조절
+			if(scrollTop*transformSpeed <= 50){
+				t3.style.transform = `translate3d(0,${-scrollTop*transformSpeed}px,0)`;
+			}else{
+				t3.style.transform = `translate3d(0,-50px,0)`;
+			}							
+		}else{
+			t3.style.opacity = `0`
+		}
+	}else{
+		backboard.classList.remove('fixed');
+		t1.style.opacity = `0`;
+		t2.style.opacity = `0`;
+		t3.style.opacity = `0`;
+	}
+
+	if(parallaxBottom-winHi <= 0){
+		backboard.classList.remove('fixed');
+		backboard.style.transform = `translate(0, ${parallax.clientHeight-winHi}px)`
+	}else{
+		backboard.style.transform = `translate(0, 0px)`
+	}
+	
+
+	// if(footer.getBoundingClientRect().top - winHi <= 0){
+	// 	backboard.classList.remove('fixed');
+	// 	backboard.style.transform = `translate(0, ${parallax.clientHeight-winHi}px)`
+	// }else{
+	// 	backboard.style.transform = `translate(-50%, 0px)`
+	// }
+
+	// 프로젝트 영역 닿으면 고정 해제
+	// if(portfolio.getBoundingClientRect().top - winHi <= 0){
+	// 	// backboard.style.transform = `translate(0, ${parallax.clientHeight-winHi}px)`
+	// }else{
+	// 	// backboard.style.transform = `translate(0, 0)`
+	// }
+
+		// parallax.children[1].style.border = "1px solid #333";
+		// console.log(parallax.querySelector('img'))
+		// let tt = Math.abs(parallax.getBoundingClientRect().top-winHi)
+		// console.log(Math.abs(parallax.getBoundingClientRect().top))
+		// parallax.children[1].children[1].style.left = `${Math.abs(parallax.getBoundingClientRect().top)}px`
+		// parallax.children[1].children[1].style.width = `${100+tt-min}px`
+		// parallax.children[1].children[1].style.height = `${100+tt-min}px`
+		// parallax.children[1].children[1].style.opacity = `${1 - tt * 0.0002}`
+		// parallax.querySelector('.snoopy').classList.add('anifix');
+	// 	parallax.querySelector('.snoopy').style.left = `${(tt-min)*0.2}px`
+	// 	parallax.querySelector('.snoopy').style.transform = `scaleX(-1) rotate(${-tt*0.2}deg)`
+	// 	console.log(tt)
+	// }else{
+		// parallax.children[1].children[1].style.width = `100px`
+		// parallax.children[1].children[1].style.height = `100px`
+	// }
+
 	// 위로가기 버튼 나타나기
 	(window.scrollY > 500) ? goTop.classList.add("show") : goTop.classList.remove("show");
 	
