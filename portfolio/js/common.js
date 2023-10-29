@@ -97,7 +97,7 @@ window.addEventListener("scroll", function (e) {
 	const backboard = parallax.querySelector('.backboard');
 	
 	// 헤더 고정
-	console.log(parallax.offsetTop, window.scrollY+header.clientHeight)
+	// console.log(parallax.offsetTop, window.scrollY+header.clientHeight)
 	if(window.scrollY+header.clientHeight >= parallax.offsetTop){
 		header.style.position = 'absolute';		
 		header.style.top = `${parallax.offsetTop-header.clientHeight}px`
@@ -118,8 +118,7 @@ window.addEventListener("scroll", function (e) {
 	
 	// 스킬 영역 지나면 고정
 	if(parallaxArea <= 0 ){
-		document.querySelector('body').classList.add('bg');
-		goTop.classList.add('inv');
+		document.querySelector('body').classList.add('bg');		
 		backboard.classList.add('fixed');									// 페럴렉스 영역 고정
 		parallax.querySelector('.backboard').style.height = `${winHi}px`	// 높이값 화면 높이로 지정(풀화면)	
 		let scrollTop = moveScroll * 0.002;
@@ -188,12 +187,17 @@ window.addEventListener("scroll", function (e) {
 			t3.style.opacity = `0`
 		}
 	}else{
-		document.querySelector('body').classList.remove('bg');
-		goTop.classList.remove('inv');
+		document.querySelector('body').classList.remove('bg');		
 		backboard.classList.remove('fixed');
 		t1.style.opacity = `0`;
 		t2.style.opacity = `0`;
 		t3.style.opacity = `0`;
+	}
+	// console.log(parallaxArea)
+	if(parallaxArea >= winHi){
+		goTop.classList.remove('inv');
+	}else{
+		goTop.classList.add('inv');
 	}
 
 	if(parallaxBottom-winHi <= 0){
