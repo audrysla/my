@@ -166,7 +166,7 @@ footer{
     header nav a+a {margin-left: 10px;}
     article .innerWrap{padding:30px 15px;}    
     article.main .innerWrap{padding:90px 15px;}
-    .main.static{height:600px !important;}
+    .main.static{height:580px !important;}
     .main em{font-size:38px;}
     .main p {
         line-height: 24px;

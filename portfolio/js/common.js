@@ -41,12 +41,14 @@ const interval = (num, index) =>{
 
 const sizeGap = 0;
 const scrFlag = 0;
+const minHi = 580;
 let scrGap = 0;
+
 // gnb 클릭 이동
 nav.forEach((item, index) =>{
 	item.addEventListener('click', function(){
 		if(isMobile()){	
-			(window.scrollY == 0) ? scrGap = winHi - 500 : scrGap = 0;
+			(window.scrollY == 0) ? scrGap = winHi - minHi : scrGap = 0;
 		}
 		// console.log(article[index+1].offsetTop, winHi, winHi-500)
 		goTo(article[index+1].offsetTop - header.clientHeight - scrGap);
@@ -225,7 +227,7 @@ const parallaxEv = {
 // 메인 화살표 클릭 이동 추가
 document.querySelector(".arrow").addEventListener('click',() =>{
 	if(isMobile()){	
-		(window.scrollY == 0) ? scrGap = winHi - 500 : scrGap = 0;
+		(window.scrollY == 0) ? scrGap = winHi - minHi : scrGap = 0;
 	}
 	goTo(article[1].offsetTop - header.clientHeight - scrGap);
 });
