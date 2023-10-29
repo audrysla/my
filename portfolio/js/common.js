@@ -63,7 +63,7 @@ document.querySelector(".goTop").addEventListener('click',() =>{
 
 if(isMobile()) main.style.height = "100%";	// 모바일에서만 상단 풀화면
 
-window.addEventListener("scroll", function (e) {	
+window.addEventListener("scroll", function (e) {
 
 	// 모바일만 메인 영역 풀화면
 	if(isMobile()){		
@@ -105,11 +105,9 @@ window.addEventListener("scroll", function (e) {
 	if(parallaxArea <= 0 ){
 		document.querySelector('body').classList.add('bg');
 		backboard.classList.add('fixed');									// 페럴렉스 영역 고정
-		parallax.querySelector('.backboard').style.height = `${winHi}px`	// 높이값 화면 높이로 지정(풀화면)
-	
+		parallax.querySelector('.backboard').style.height = `${winHi}px`	// 높이값 화면 높이로 지정(풀화면)	
 		let scrollTop = moveScroll * 0.002;
 		let transformSpeed = 30;
-		// console.log(opcitySpeed.toFixed(3), translateSpeed.toFixed(3))
 
 		// console.log(scrollTop.toFixed(3))
 
@@ -187,39 +185,6 @@ window.addEventListener("scroll", function (e) {
 	}else{
 		backboard.style.transform = `translate(0, 0px)`
 	}
-	
-
-	// if(footer.getBoundingClientRect().top - winHi <= 0){
-	// 	backboard.classList.remove('fixed');
-	// 	backboard.style.transform = `translate(0, ${parallax.clientHeight-winHi}px)`
-	// }else{
-	// 	backboard.style.transform = `translate(-50%, 0px)`
-	// }
-
-	// 프로젝트 영역 닿으면 고정 해제
-	// if(portfolio.getBoundingClientRect().top - winHi <= 0){
-	// 	// backboard.style.transform = `translate(0, ${parallax.clientHeight-winHi}px)`
-	// }else{
-	// 	// backboard.style.transform = `translate(0, 0)`
-	// }
-
-		// parallax.children[1].style.border = "1px solid #333";
-		// console.log(parallax.querySelector('img'))
-		// let tt = Math.abs(parallax.getBoundingClientRect().top-winHi)
-		// console.log(Math.abs(parallax.getBoundingClientRect().top))
-		// parallax.children[1].children[1].style.left = `${Math.abs(parallax.getBoundingClientRect().top)}px`
-		// parallax.children[1].children[1].style.width = `${100+tt-min}px`
-		// parallax.children[1].children[1].style.height = `${100+tt-min}px`
-		// parallax.children[1].children[1].style.opacity = `${1 - tt * 0.0002}`
-		// parallax.querySelector('.snoopy').classList.add('anifix');
-	// 	parallax.querySelector('.snoopy').style.left = `${(tt-min)*0.2}px`
-	// 	parallax.querySelector('.snoopy').style.transform = `scaleX(-1) rotate(${-tt*0.2}deg)`
-	// 	console.log(tt)
-	// }else{
-		// parallax.children[1].children[1].style.width = `100px`
-		// parallax.children[1].children[1].style.height = `100px`
-	// }
-
 	// 위로가기 버튼 나타나기
 	(window.scrollY > 500) ? goTop.classList.add("show") : goTop.classList.remove("show");
 	
