@@ -121,8 +121,8 @@ window.addEventListener("scroll", function (e) {
 			// t[index].innerText = `${per[index]}%`;
 			interval(per[index], index)
 		});
+		x = false;
 	}
-	x = false;	
 	// [E] 스킬 패럴렉스
 
 	// [S] TEXT 패럴렉스
@@ -224,7 +224,7 @@ window.addEventListener("scroll", function (e) {
 		t2.style.opacity = `0`;
 		t3.style.opacity = `0`;
 	}
-	
+
 	// text 패럴렉스 영역 끝나면
 	if(parallaxBottom-winHi <= 0){
 		backboard.classList.remove('fixed');
