@@ -11,11 +11,6 @@ const about = document.querySelector(".about");
 const portfolio = document.querySelector(".portfolio");
 const footer = document.querySelector("footer");
 const goTop = document.querySelector(".goTop");
-// skill
-const per = [90, 90, 70, 90, 90, 50, 50]
-let x = true;
-let i = document.querySelectorAll(".skill ul li i");
-let t = document.querySelectorAll(".skill ul li .per");
 
 if(isMobile()) main.style.height = "100%";	// 모바일에서만 상단 풀화면
 
@@ -70,7 +65,12 @@ document.querySelector(".goTop").addEventListener('click',() =>{
 	goTo(0);
 });
 
-// skill 패럴렉스
+// [S] 스킬 패럴렉스
+// skill
+const per = [90, 90, 70, 90, 90, 50, 50]
+let x = true;
+let i = document.querySelectorAll(".skill ul li i");
+let t = document.querySelectorAll(".skill ul li .per");
 const parallaxEv = {
 	init : function(){
 		this.items = document.querySelectorAll(".parallax-div span");
@@ -84,9 +84,18 @@ const parallaxEv = {
 		window.addEventListener("scroll", function (e) {
 			const skillTop = skill.getBoundingClientRect().top;
 			// const skillTopN = skill.getBoundingClientRect().top;
-			console.log(skillTop-winHi, skillTop+skill.clientHeight)
-
-			if(skillTop-winHi <= 0 && skillTop+skill.clientHeight >= 0){		
+			// console.log(skillTop-winHi, skillTop+skill.clientHeight)
+			if(skillTop-winHi <= -100 && skillTop+skill.clientHeight >= 0){
+				// 게이지	
+				if(x){
+					i.forEach((item, index) =>{
+						item.style.width = `${per[index]}%`;
+						// t[index].innerText = `${per[index]}%`;
+						interval(per[index], index)
+					});
+					x = false;
+				}
+				// 뼈다귀
 				item[0].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.0501}px, 0)`
 				item[1].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.2501}px, 0)`
 				item[2].style.transform = `translate3d(-50%, ${Math.abs(skillTop - winHi) * -0.9501}px, 0)`
@@ -100,6 +109,7 @@ const parallaxEv = {
 		})
 	}
 }
+// [E] 스킬 패럴렉스
 parallaxEv.init();
 parallaxEv.action();
 
@@ -114,16 +124,7 @@ window.addEventListener("scroll", function (e) {
 	// 스크롤 내려갈 때 헤더 백그라운드 주기
 	about.getBoundingClientRect().top < 0+header.clientHeight ? header.classList.add('bg') : header.classList.remove('bg');
 
-	// [S] 스킬 패럴렉스
-	if(x){
-		i.forEach((item, index) =>{
-			item.style.width = `${per[index]}%`;
-			// t[index].innerText = `${per[index]}%`;
-			interval(per[index], index)
-		});
-		x = false;
-	}
-	// [E] 스킬 패럴렉스
+	
 
 	// [S] TEXT 패럴렉스
 	const parallax = document.querySelector(".parallax");
