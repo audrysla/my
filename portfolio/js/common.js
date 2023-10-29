@@ -66,7 +66,6 @@ document.querySelector(".goTop").addEventListener('click',() =>{
 });
 
 // [S] 스킬 패럴렉스
-// skill
 const per = [90, 90, 70, 90, 90, 50, 50]
 let x = true;
 let i = document.querySelectorAll(".skill ul li i");
@@ -122,9 +121,7 @@ window.addEventListener("scroll", function (e) {
 	}
 	
 	// 스크롤 내려갈 때 헤더 백그라운드 주기
-	about.getBoundingClientRect().top < 0+header.clientHeight ? header.classList.add('bg') : header.classList.remove('bg');
-
-	
+	about.getBoundingClientRect().top < 0+header.clientHeight ? header.classList.add('bg') : header.classList.remove('bg');	
 
 	// [S] TEXT 패럴렉스
 	const parallax = document.querySelector(".parallax");
