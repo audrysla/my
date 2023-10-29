@@ -154,6 +154,7 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
 .goTop img{width:100%;}
 .goTop.show{transform: translateY(0)}
 .goTop.foot{transform: translateY(-80px)}
+.goTop.inv{filter: invert(100%)}
 
 footer{
     z-index: 200;position: relative;height:120px;
