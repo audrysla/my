@@ -91,9 +91,21 @@ window.addEventListener("scroll", function (e) {
 		x = false;
 	}
 
+	
+
 	const parallax = document.querySelector(".parallax");
 	const backboard = parallax.querySelector('.backboard');
 	
+	// 헤더 고정
+	console.log(parallax.offsetTop, window.scrollY+header.clientHeight)
+	if(window.scrollY+header.clientHeight >= parallax.offsetTop){
+		header.style.position = 'absolute';		
+		header.style.top = `${parallax.offsetTop-header.clientHeight}px`
+	}else{
+		header.style.position = 'fixed';		
+		header.style.top = `0`
+	}
+
 	// 움직이는 텍스트 요소
 	const t1 = document.querySelector(".t1");
 	const t2 = document.querySelector(".t2");
@@ -103,6 +115,7 @@ window.addEventListener("scroll", function (e) {
 	let parallaxBottom = footer.getBoundingClientRect().top;	// 패럴렉스 영역 끝지점(푸터offsetTop)
 	let moveScroll = Math.abs(parallaxArea);					// 패럴렉스 영역에서의 스크롤 기준 값 (0부터 증가)
 
+	
 	// 스킬 영역 지나면 고정
 	if(parallaxArea <= 0 ){
 		document.querySelector('body').classList.add('bg');
