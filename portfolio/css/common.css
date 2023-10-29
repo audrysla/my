@@ -124,9 +124,6 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
 .parallax-div span:nth-child(8){top:90%;left:90%;font-size:200px !important;}
 /* .parallax-div span:nth-child(9){top:70%;left:90%} */
 
-
-
-
 .parallax{z-index:10;height:4200px;}
 .parallax img{width:100%;}
 /* .parallax .innerWrap{
@@ -168,7 +165,7 @@ footer{
     header nav a+a {margin-left: 10px;}
     article .innerWrap{padding:30px 15px;}    
     article.main .innerWrap{padding:90px 15px;}
-    .main.static{height:500px !important;}
+    .main.static{height:600px !important;}
     .main em{font-size:38px;}
     .main p {
         line-height: 24px;
