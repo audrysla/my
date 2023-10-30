@@ -204,41 +204,48 @@ window.addEventListener("scroll", function (e) {
 		}
 		
 		// text3 액션
-		if(scrollTop >= 4 && scrollTop <= 10){
+		if(scrollTop >= 4){
 			let moveY = scrollTop-4;
 			// scrollTop = scrollTop-2;
 			// console.log("3 =",scrollTop.toFixed(3))
+			
 			// opacity 조절
 			if(moveY <= 1){
 				t3.style.opacity = `${moveY}`;
 			}else{
 				t3.style.opacity = `1`;
 			}
+
 			// 위치 조절
 			if(moveY*transformSpeed <= 50){
 				t3.style.transform = `translate3d(0,${-moveY*transformSpeed}px,0)`;
 			}else{
 				t3.style.transform = `translate3d(0,-50px,0)`;
 			}
+			
 			// 마지막 글자 커지기
-			if(scrollTop >= 6.3){
-				let moveY = scrollTop-6.3;
+			if(scrollTop >= 6){
+				let moveY = scrollTop-6;
 				// scrollTop = scrollTop-2;
 				// console.log("4 =",moveY.toFixed(3))
-				t3.querySelector('i').style.transform = `scale(${1+moveY*1.5})`;
 				let secondMove = 1 -(moveY - 1)+1;
-				if(secondMove >= 0.2){
-					t3.style.opacity = `${secondMove}`
+				if(parallaxBottom-winHi >= 0){
+					if(secondMove >= 0.2){
+						t3.style.opacity = `${secondMove}`
+					}else{
+						t3.style.opacity = `0.2`
+					}
+					t3.querySelector('i').style.transform = `scale(${1+moveY*1.5})`;
 				}else{
 					t3.style.opacity = `0.2`
 				}
 			}else{
 				t3.querySelector('i').style.transform = `scale(1)`;
 			}
+			// 마지막 글자 커지기 END
 		}else{
 			t3.style.opacity = `0`
-		}
-		
+		}		
 	}else{
 		backboard.classList.remove('fixed');
 		document.body.classList.remove('bg');		
@@ -246,7 +253,6 @@ window.addEventListener("scroll", function (e) {
 		t2.style.opacity = `0`;
 		t3.style.opacity = `0`;
 	}
-
 	// text 패럴렉스 영역 끝나면
 	if(parallaxBottom-winHi <= 0){
 		backboard.classList.remove('fixed');
