@@ -152,69 +152,93 @@ window.addEventListener("scroll", function (e) {
 		document.body.classList.add('bg');
 		parallax.querySelector('.backboard').style.height = `${winHi}px`	// 높이값 화면 높이로 지정(풀화면)	
 		let scrollTop = moveScroll * 0.002;
-		let transformSpeed = 30;
+		let transformSpeed = 30;	
+
 		// console.log(scrollTop.toFixed(3))
 
 		// text1 액션
-		if(scrollTop <= 3){
-			// opacity 조절			
-			if(scrollTop <= 1){
-				t1.style.opacity = `${scrollTop}`;
-			}else if(scrollTop >= 2){
-				let secondMove = 1 -(scrollTop - 1)+1;
+		if(scrollTop <= 4){
+			let moveY = scrollTop;
+			// opacity 조절
+			if(moveY <= 1){
+				t1.style.opacity = `${moveY}`;
+			}else if(moveY >= 2){
+				let secondMove = 1 -(moveY - 1)+1;
 				t1.style.opacity = `${secondMove}`
 			}else{
 				t1.style.opacity = `1`;
 			}
 			// 위치 조절
-			if(scrollTop*transformSpeed <= 50){
-				t1.style.transform = `translate3d(0,${-scrollTop*transformSpeed}px,0)`;
+			if(moveY*transformSpeed <= 50){
+				t1.style.transform = `translate3d(0,${-moveY*transformSpeed}px,0)`;
 			}else{
 				t1.style.transform = `translate3d(0,-50px,0)`;
-			}			
+			}
 		}else{
 			t1.style.opacity = `0`
 		}
+		
 		// text2 액션
 		if(scrollTop >= 2 && scrollTop <= 6){
-			scrollTop = scrollTop-2;
+			let moveY = scrollTop-2;
+			// scrollTop = scrollTop-2;
+			// console.log("2 =",scrollTop.toFixed(3))
 			// opacity 조절
-			if(scrollTop <= 1){
-				t2.style.opacity = `${scrollTop}`;
-			}else if(scrollTop >= 2){
-				let secondMove = 1 -(scrollTop - 1)+1;
+			if(moveY <= 1){
+				t2.style.opacity = `${moveY}`;
+			}else if(moveY >= 2){
+				let secondMove = 1 -(moveY - 1)+1;
 				t2.style.opacity = `${secondMove}`
-			}			else{
+			}else{
 				t2.style.opacity = `1`;
 			}
 			
 			// 위치 조절
-			if(scrollTop*transformSpeed <= 50){
-				t2.style.transform = `translate3d(0,${-scrollTop*transformSpeed}px,0)`;
+			if(moveY*transformSpeed <= 50){
+				t2.style.transform = `translate3d(0,${-moveY*transformSpeed}px,0)`;
 			}else{
 				t2.style.transform = `translate3d(0,-50px,0)`;
 			}			
 		}else{
 			t2.style.opacity = `0`
 		}
+		
 		// text3 액션
-		if(scrollTop >= 2 && scrollTop <= 9){
-			scrollTop = scrollTop-2;
+		if(scrollTop >= 4 && scrollTop <= 10){
+			let moveY = scrollTop-4;
+			// scrollTop = scrollTop-2;
+			// console.log("3 =",scrollTop.toFixed(3))
 			// opacity 조절
-			if(scrollTop <= 1){
-				t3.style.opacity = `${scrollTop}`;
+			if(moveY <= 1){
+				t3.style.opacity = `${moveY}`;
 			}else{
 				t3.style.opacity = `1`;
 			}
 			// 위치 조절
-			if(scrollTop*transformSpeed <= 50){
-				t3.style.transform = `translate3d(0,${-scrollTop*transformSpeed}px,0)`;
+			if(moveY*transformSpeed <= 50){
+				t3.style.transform = `translate3d(0,${-moveY*transformSpeed}px,0)`;
 			}else{
 				t3.style.transform = `translate3d(0,-50px,0)`;
-			}							
+			}
+			// 마지막 글자 커지기
+			if(scrollTop >= 6.3){
+				let moveY = scrollTop-6.3;
+				// scrollTop = scrollTop-2;
+				// console.log("4 =",moveY.toFixed(3))
+				t3.querySelector('i').style.transform = `scale(${1+moveY*1.5})`;
+				let secondMove = 1 -(moveY - 1)+1;
+				if(secondMove >= 0.2){
+					t3.style.opacity = `${secondMove}`
+				}else{
+					t3.style.opacity = `0.2`
+				}
+			}else{
+				t3.querySelector('i').style.transform = `scale(1)`;
+			}
 		}else{
 			t3.style.opacity = `0`
 		}
+		
 	}else{
 		backboard.classList.remove('fixed');
 		document.body.classList.remove('bg');		
