@@ -8,7 +8,7 @@ const header = document.querySelector("header");
 const nav = document.querySelectorAll("nav a");
 const skill = document.querySelector(".skill");
 const about = document.querySelector(".about");
-const portfolio = document.querySelector(".portfolio");
+const project = document.querySelector(".project");
 const footer = document.querySelector("footer");
 const goTop = document.querySelector(".goTop");
 
@@ -51,12 +51,12 @@ nav.forEach((item, index) =>{
 	});
 });
 // 메인 화살표 클릭 이동 추가
-document.querySelector(".arrow").addEventListener('click',() =>{
-	if(isMobile()){	
-		(window.scrollY == 0) ? scrGap = winHi - minHi : scrGap = 0;
-	}
-	goTo(article[1].offsetTop - header.clientHeight - scrGap);
-});
+// document.querySelector(".arrow").addEventListener('click',() =>{
+// 	if(isMobile()){	
+// 		(window.scrollY == 0) ? scrGap = winHi - minHi : scrGap = 0;
+// 	}
+// 	goTo(article[1].offsetTop - header.clientHeight - scrGap);
+// });
 // 맨위로
 document.querySelector("header h1 a").addEventListener('click',() =>{
 	goTo(0);
