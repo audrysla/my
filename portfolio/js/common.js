@@ -149,20 +149,21 @@ window.addEventListener("scroll", function (e) {
 	let moveScroll = Math.abs(parallaxArea);					// 패럴렉스 영역에서의 스크롤 기준 값 (0부터 증가)
 	
 	// text 패럴렉스
-	if(parallaxArea <= 0 ){
+	if(parallaxArea <= 0 ){			
+		
+		// [D] 소스 정리 필요!!!!
+
 		backboard.classList.add('fixed');									// 페럴렉스 영역 고정
 		document.body.classList.add('bg');
 		parallax.querySelector('.backboard').style.height = `${winHi}px`	// 높이값 화면 높이로 지정(풀화면)	
-		let scrollTop = moveScroll * 0.002;
-		let transformSpeed = 30;	
-
-		// console.log(scrollTop.toFixed(3))
-		
-		// [D] 소스 정리 필요!!!!
 		// text 동작 범위 및 이동 값 세팅
+		let scrollTop = moveScroll * 0.0025;
+		let transformSpeed = 30;	
 		let start = 0;
 		let end = 4;
 		let moveDom = 50;
+
+		// console.log(scrollTop.toFixed(3))
 
 		// text1 액션
 		if(scrollTop >= start && scrollTop <= end){
