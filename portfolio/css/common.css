@@ -168,7 +168,7 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
 .parallax-div span:nth-child(8){top:90%;left:90%;font-size:200px !important;}
 /* .parallax-div span:nth-child(9){top:70%;left:90%} */
 
-.parallax{z-index:10;height:7200px;}
+.parallax{z-index:10;height:7000px;}
 .parallax img{width:100%;}
 /* .parallax .innerWrap{
     position:absolute;top:0;left:50%;transform: translateX(-50%);
