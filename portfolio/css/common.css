@@ -261,6 +261,7 @@ footer{
     .flexWrap{display:block;}
     .parallax-div .material-symbols-outlined{
         font-size:70px !important;
-    }
+    }   
+    .work_list li:nth-child(1) .thumb{animation-play-state:paused;}
     .goTop{right:15px;bottom:15px;width:50px;height:50px;}
 }
