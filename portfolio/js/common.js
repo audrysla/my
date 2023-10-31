@@ -51,12 +51,12 @@ nav.forEach((item, index) =>{
 	});
 });
 // 메인 화살표 클릭 이동 추가
-// document.querySelector(".arrow").addEventListener('click',() =>{
-// 	if(isMobile()){	
-// 		(window.scrollY == 0) ? scrGap = winHi - minHi : scrGap = 0;
-// 	}
-// 	goTo(article[1].offsetTop - header.clientHeight - scrGap);
-// });
+document.querySelector(".arrow").addEventListener('click',() =>{
+	if(isMobile()){	
+		(window.scrollY == 0) ? scrGap = winHi - minHi : scrGap = 0;
+	}
+	goTo(article[1].offsetTop - header.clientHeight - scrGap);
+});
 // 맨위로
 document.querySelector("header h1 a").addEventListener('click',() =>{
 	goTo(0);
@@ -140,7 +140,9 @@ window.addEventListener("scroll", function (e) {
 	// 움직이는 텍스트 요소
 	const t1 = document.querySelector(".t1");
 	const t2 = document.querySelector(".t2");
-	const t3 = document.querySelector(".t3");	
+	const t3 = document.querySelector(".t3");
+	const t4 = document.querySelector(".t4");	
+	const t5 = document.querySelector(".t5");	
 	
 	let parallaxArea = parallax.getBoundingClientRect().top;	// 패럴렉스 영역 시작점
 	let parallaxBottom = footer.getBoundingClientRect().top;	// 패럴렉스 영역 끝지점(푸터offsetTop)
@@ -155,47 +157,53 @@ window.addEventListener("scroll", function (e) {
 		let transformSpeed = 30;	
 
 		// console.log(scrollTop.toFixed(3))
+		
+		// [D] 소스 정리 필요!!!!
+		// text 동작 범위 및 이동 값 세팅
+		let start = 0;
+		let end = 4;
+		let moveDom = 50;
 
 		// text1 액션
-		if(scrollTop <= 4){
-			let moveY = scrollTop;
+		if(scrollTop >= start && scrollTop <= end){
+			let text = document.querySelector(".t1");
+			let scrTop = scrollTop-start;
 			// opacity 조절
-			if(moveY <= 1){
-				t1.style.opacity = `${moveY}`;
-			}else if(moveY >= 2){
-				let secondMove = 1 -(moveY - 1)+1;
-				t1.style.opacity = `${secondMove}`
+			if(scrTop <= 1){
+				text.style.opacity = `${scrTop}`;
+			}else if(scrTop >= 2){
+				let secondMove = 1 -(scrTop - 1)+1;
+				text.style.opacity = `${secondMove}`
 			}else{
-				t1.style.opacity = `1`;
+				text.style.opacity = `1`;
 			}
 			// 위치 조절
-			if(moveY*transformSpeed <= 50){
-				t1.style.transform = `translate3d(0,${-moveY*transformSpeed}px,0)`;
+			if(scrTop*transformSpeed <= moveDom){
+				text.style.transform = `translate3d(0,${-scrTop*transformSpeed}px,0)`;
 			}else{
-				t1.style.transform = `translate3d(0,-50px,0)`;
+				text.style.transform = `translate3d(0,${-moveDom}px,0)`;
 			}
 		}else{
-			t1.style.opacity = `0`
-		}
+			let text = document.querySelector(".t1");
+			text.style.opacity = `0`
+		}				
 		
 		// text2 액션
 		if(scrollTop >= 2 && scrollTop <= 6){
-			let moveY = scrollTop-2;
-			// scrollTop = scrollTop-2;
-			// console.log("2 =",scrollTop.toFixed(3))
+			let scrTop = scrollTop-2;
 			// opacity 조절
-			if(moveY <= 1){
-				t2.style.opacity = `${moveY}`;
-			}else if(moveY >= 2){
-				let secondMove = 1 -(moveY - 1)+1;
+			if(scrTop <= 1){
+				t2.style.opacity = `${scrTop}`;
+			}else if(scrTop >= 2){
+				let secondMove = 1 -(scrTop - 1)+1;
 				t2.style.opacity = `${secondMove}`
 			}else{
 				t2.style.opacity = `1`;
 			}
 			
 			// 위치 조절
-			if(moveY*transformSpeed <= 50){
-				t2.style.transform = `translate3d(0,${-moveY*transformSpeed}px,0)`;
+			if(scrTop*transformSpeed <= 50){
+				t2.style.transform = `translate3d(0,${-scrTop*transformSpeed}px,0)`;
 			}else{
 				t2.style.transform = `translate3d(0,-50px,0)`;
 			}			
@@ -203,49 +211,92 @@ window.addEventListener("scroll", function (e) {
 			t2.style.opacity = `0`
 		}
 		
-		// text3 액션
-		if(scrollTop >= 4){
-			let moveY = scrollTop-4;
-			// scrollTop = scrollTop-2;
-			// console.log("3 =",scrollTop.toFixed(3))
-			
+		//t3
+		if(scrollTop >= 4 && scrollTop <= 8){
+			let scrTop = scrollTop-4;
 			// opacity 조절
-			if(moveY <= 1){
-				t3.style.opacity = `${moveY}`;
+			if(scrTop <= 1){
+				t3.style.opacity = `${scrTop}`;
+			}else if(scrTop >= 2){
+				let secondMove = 1 -(scrTop - 1)+1;
+				t3.style.opacity = `${secondMove}`
 			}else{
 				t3.style.opacity = `1`;
 			}
-
+			
 			// 위치 조절
-			if(moveY*transformSpeed <= 50){
-				t3.style.transform = `translate3d(0,${-moveY*transformSpeed}px,0)`;
+			if(scrTop*transformSpeed <= 50){
+				t3.style.transform = `translate3d(0,${-scrTop*transformSpeed}px,0)`;
 			}else{
 				t3.style.transform = `translate3d(0,-50px,0)`;
+			}			
+		}else{
+			t3.style.opacity = `0`
+		}
+
+		//t4
+		if(scrollTop >= 6 && scrollTop <= 10){
+			let scrTop = scrollTop-6;
+			// opacity 조절
+			if(scrTop <= 1){
+				t4.style.opacity = `${scrTop}`;
+			}else if(scrTop >= 2){
+				let secondMove = 1 -(scrTop - 1)+1;
+				t4.style.opacity = `${secondMove}`
+			}else{
+				t4.style.opacity = `1`;
+			}
+			
+			// 위치 조절
+			if(scrTop*transformSpeed <= 50){
+				t4.style.transform = `translate3d(0,${-scrTop*transformSpeed}px,0)`;
+			}else{
+				t4.style.transform = `translate3d(0,-50px,0)`;
+			}			
+		}else{
+			t4.style.opacity = `0`
+		}
+
+		// 마지막 text 액션
+		if(scrollTop >= 8){
+			let scrTop = scrollTop-8;
+			// opacity 조절
+			if(scrTop <= 1){
+				t5.style.opacity = `${scrTop}`;
+			}else{
+				t5.style.opacity = `1`;
+			}
+
+			// 위치 조절
+			if(scrTop*transformSpeed <= 50){
+				t5.style.transform = `translate3d(0,${-scrTop*transformSpeed}px,0)`;
+			}else{
+				t5.style.transform = `translate3d(0,-50px,0)`;
 			}
 			
 			// 마지막 글자 커지기
-			if(scrollTop >= 6){
-				let moveY = scrollTop-6;
+			if(scrollTop >= 10){
+				let scrTop = scrollTop-10;
 				// scrollTop = scrollTop-2;
-				// console.log("4 =",moveY.toFixed(3))
-				let secondMove = 1 -(moveY - 1)+1;
+				// console.log("4 =",scrTop.toFixed(3))
+				let secondMove = 1 -(scrTop - 1)+1;
 				if(parallaxBottom-winHi >= 0){
 					if(secondMove >= 0.2){
-						t3.style.opacity = `${secondMove}`
+						t5.style.opacity = `${secondMove}`
 					}else{
-						t3.style.opacity = `0.2`
+						t5.style.opacity = `0.2`
 					}
-					t3.querySelector('i').style.transform = `scale(${1+moveY*1.5})`;
+					t5.querySelector('i').style.transform = `scale(${1+scrTop*1.5})`;
 				}else{
-					t3.style.opacity = `0.2`
+					t5.style.opacity = `0.2`
 				}
 			}else{
-				t3.querySelector('i').style.transform = `scale(1)`;
+				t5.querySelector('i').style.transform = `scale(1)`;
 			}
 			// 마지막 글자 커지기 END
 		}else{
-			t3.style.opacity = `0`
-		}		
+			t5.style.opacity = `0`
+		}
 	}else{
 		backboard.classList.remove('fixed');
 		document.body.classList.remove('bg');		
