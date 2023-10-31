@@ -285,11 +285,11 @@ window.addEventListener("scroll", function (e) {
 					if(secondMove >= 0.2){
 						t5.style.opacity = `${secondMove}`
 					}else{
-						t5.style.opacity = `0.2`
+						t5.style.opacity = `0.1`
 					}
 					t5.querySelector('i').style.transform = `scale(${1+scrTop*1.5})`;
 				}else{
-					t5.style.opacity = `0.2`
+					t5.style.opacity = `0.1`
 				}
 			}else{
 				t5.querySelector('i').style.transform = `scale(1)`;
