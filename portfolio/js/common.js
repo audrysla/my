@@ -14,6 +14,36 @@ const goTop = document.querySelector(".goTop");
 
 if(isMobile()) main.style.height = "100%";	// 모바일에서만 상단 풀화면
 
+const scrFlag = 0;
+const minHi = 580;
+let scrGap = 0;
+
+// gnb 클릭 이동
+nav.forEach((item, index) =>{
+	item.addEventListener('click', function(e){
+		let menu = this.getAttribute('data-menu');
+		// console.log(menu, document.querySelector("."+menu).offsetTop)
+		if(isMobile()){	
+			(window.scrollY == 0) ? scrGap = winHi - minHi : scrGap = 0;
+		}
+		// console.log(article[index+1].offsetTop, winHi, winHi-500)
+		goTo(document.querySelector("."+menu).offsetTop - header.clientHeight - scrGap);
+	});
+});
+// 메인 화살표 클릭 이동 추가
+document.querySelector(".arrow").addEventListener('click',() =>{
+	if(isMobile()){	
+		(window.scrollY == 0) ? scrGap = winHi - minHi : scrGap = 0;
+	}
+	goTo(article[1].offsetTop - header.clientHeight - scrGap);
+});
+// 맨위로
+document.querySelector("header h1 a").addEventListener('click',() =>{
+	goTo(0);
+});
+document.querySelector(".goTop").addEventListener('click',() =>{
+	goTo(0);
+});
 // 스크롤 이동
 const goTo = (offset) =>{
 	window.scrollTo({
@@ -35,35 +65,6 @@ const interval = (num, index) =>{
 		}
 	},20);
 }
-
-const scrFlag = 0;
-const minHi = 580;
-let scrGap = 0;
-
-// gnb 클릭 이동
-nav.forEach((item, index) =>{
-	item.addEventListener('click', function(){
-		if(isMobile()){	
-			(window.scrollY == 0) ? scrGap = winHi - minHi : scrGap = 0;
-		}
-		// console.log(article[index+1].offsetTop, winHi, winHi-500)
-		goTo(article[index+1].offsetTop - header.clientHeight - scrGap);
-	});
-});
-// 메인 화살표 클릭 이동 추가
-document.querySelector(".arrow").addEventListener('click',() =>{
-	if(isMobile()){	
-		(window.scrollY == 0) ? scrGap = winHi - minHi : scrGap = 0;
-	}
-	goTo(article[1].offsetTop - header.clientHeight - scrGap);
-});
-// 맨위로
-document.querySelector("header h1 a").addEventListener('click',() =>{
-	goTo(0);
-});
-document.querySelector(".goTop").addEventListener('click',() =>{
-	goTo(0);
-});
 
 // [S] 스킬 패럴렉스
 const per = [90, 90, 70, 90, 90, 50, 50]	// 스킬 활용도 점수%
@@ -145,9 +146,11 @@ window.addEventListener("scroll", function (e) {
 	const t5 = document.querySelector(".t5");	
 	
 	let parallaxArea = parallax.getBoundingClientRect().top;	// 패럴렉스 영역 시작점
-	let parallaxBottom = footer.getBoundingClientRect().top;	// 패럴렉스 영역 끝지점(푸터offsetTop)
+	// let parallaxBottom = footer.getBoundingClientRect().top;	// 패럴렉스 영역 끝지점(푸터offsetTop)
 	let moveScroll = Math.abs(parallaxArea);					// 패럴렉스 영역에서의 스크롤 기준 값 (0부터 증가)
 	
+	// console.log(window.scrollY+winHi, parallax.offsetTop+parallax.clientHeight)
+
 	// text 패럴렉스
 	if(parallaxArea <= 0 ){			
 		
@@ -281,7 +284,7 @@ window.addEventListener("scroll", function (e) {
 				// scrollTop = scrollTop-2;
 				// console.log("4 =",scrTop.toFixed(3))
 				let secondMove = 1 -(scrTop - 1)+1;
-				if(parallaxBottom-winHi >= 0){
+				if(window.scrollY+winHi <= parallax.offsetTop+parallax.clientHeight){
 					if(secondMove >= 0.2){
 						t5.style.opacity = `${secondMove}`
 					}else{
@@ -305,9 +308,11 @@ window.addEventListener("scroll", function (e) {
 		t2.style.opacity = `0`;
 		t3.style.opacity = `0`;
 	}
+
 	// text 패럴렉스 영역 끝나면
-	if(parallaxBottom-winHi <= 0){
+	if(window.scrollY+winHi >= parallax.offsetTop+parallax.clientHeight){
 		backboard.classList.remove('fixed');
+		document.body.classList.remove('bg');
 		backboard.style.transform = `translate(0, ${parallax.clientHeight-winHi}px)`
 	}else{
 		backboard.style.transform = `translate(0, 0px)`
