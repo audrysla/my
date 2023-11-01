@@ -240,12 +240,12 @@ window.addEventListener("scroll", function (e) {
 
 		//t4
 		if(scrollTop >= 6 && scrollTop <= 10){
-			let scrTop = scrollTop-6;
+			let scrTop = scrollTop-6;			
 			// opacity 조절
 			if(scrTop <= 1){
 				t4.style.opacity = `${scrTop}`;
 			}else if(scrTop >= 2){
-				let secondMove = 1 -(scrTop - 1)+1;
+				let secondMove = 1 -(scrTop - 2);
 				t4.style.opacity = `${secondMove}`
 			}else{
 				t4.style.opacity = `1`;
@@ -270,21 +270,17 @@ window.addEventListener("scroll", function (e) {
 			}else{
 				t5.style.opacity = `1`;
 			}
-
 			// 위치 조절
 			if(scrTop*transformSpeed <= 50){
 				t5.style.transform = `translate3d(0,${-scrTop*transformSpeed}px,0)`;
 			}else{
 				t5.style.transform = `translate3d(0,-50px,0)`;
-			}
-			
+			}			
 			// 마지막 글자 커지기
 			if(scrollTop >= 10){
 				let scrTop = scrollTop-10;
-				// scrollTop = scrollTop-2;
-				// console.log("4 =",scrTop.toFixed(3))
-				let secondMove = 1 -(scrTop - 1)+1;
 				if(window.scrollY+winHi <= parallax.offsetTop+parallax.clientHeight){
+					let secondMove = 1 -(scrTop - 1) * 0.3;
 					if(secondMove >= 0.2){
 						t5.style.opacity = `${secondMove}`
 					}else{
