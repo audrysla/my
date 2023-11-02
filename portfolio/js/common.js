@@ -109,9 +109,9 @@ const parallaxEv = {
 		})
 	}
 }
-// [E] 스킬 패럴렉스
 parallaxEv.init();
 parallaxEv.action();
+// [E] 스킬 패럴렉스
 
 // 스크롤 이벤트 시작
 window.addEventListener("scroll", function (e) {
@@ -123,43 +123,40 @@ window.addEventListener("scroll", function (e) {
 	
 	// 스크롤 내려갈 때 헤더 백그라운드 주기
 	about.getBoundingClientRect().top < 0+header.clientHeight ? header.classList.add('bg') : header.classList.remove('bg');	
-
-	// [S] TEXT 패럴렉스
-	const parallax = document.querySelector(".parallax");
-	const backboard = parallax.querySelector('.backboard');
 	
-	// 헤더 고정
-	// console.log(parallax.offsetTop, window.scrollY+header.clientHeight)
-	if(window.scrollY+header.clientHeight >= parallax.offsetTop){
-		header.style.position = 'absolute';		
-		header.style.top = `${parallax.offsetTop-header.clientHeight}px`
-	}else{
-		header.style.position = 'fixed';		
-		header.style.top = `0`
-	}
+	//////////////////////////// [S] TEXT 패럴렉스 시작 ////////////////////////////////
+	const parallax = document.querySelector(".parallax");
+	const backboard = parallax.querySelector('.backboard');	
 
 	// 움직이는 텍스트 요소
 	const t1 = document.querySelector(".t1");
 	const t2 = document.querySelector(".t2");
 	const t3 = document.querySelector(".t3");
-	const t4 = document.querySelector(".t4");	
-	const t5 = document.querySelector(".t5");	
+	const t4 = document.querySelector(".t4");
+	const t5 = document.querySelector(".t5");
 	
 	let parallaxArea = parallax.getBoundingClientRect().top;	// 패럴렉스 영역 시작점
-	// let parallaxBottom = footer.getBoundingClientRect().top;	// 패럴렉스 영역 끝지점(푸터offsetTop)
 	let moveScroll = Math.abs(parallaxArea);					// 패럴렉스 영역에서의 스크롤 기준 값 (0부터 증가)
 	
-	// console.log(window.scrollY+winHi, parallax.offsetTop+parallax.clientHeight)
+	// 페럴랙스 text 영역에서는 헤더 fixed 해제
+	if(window.scrollY+header.clientHeight >= parallax.offsetTop){
+		header.style.position = 'absolute';		
+		header.style.top = `${parallax.offsetTop-header.clientHeight}px`
+	}else{
+		header.style.position = 'fixed';
+		header.style.top = `0`
+	}
 
 	// text 패럴렉스
 	if(parallaxArea <= 0 ){			
 		
 		// [D] 소스 정리 필요!!!!
 
+		parallax.querySelector('.backboard').style.height = `${winHi}px`	// 높이값 화면 높이로 지정(풀화면)	
 		backboard.classList.add('fixed');									// 페럴렉스 영역 고정
 		document.body.classList.add('bg');
-		parallax.querySelector('.backboard').style.height = `${winHi}px`	// 높이값 화면 높이로 지정(풀화면)	
-		// text 동작 범위 및 이동 값 세팅
+
+		// text 동작 범위, 이동 속도 세팅
 		let scrollTop = moveScroll * 0.0025;
 		let transformSpeed = 30;	
 		let start = 0;
@@ -297,34 +294,28 @@ window.addEventListener("scroll", function (e) {
 		}else{
 			t5.style.opacity = `0`
 		}
+
+		// text 패럴렉스 영역 끝나면
+		if(window.scrollY+winHi >= parallax.offsetTop+parallax.clientHeight){
+			backboard.classList.remove('fixed');
+			document.body.classList.remove('bg');
+			backboard.style.transform = `translate(0, ${parallax.clientHeight-winHi}px)`
+		}else{
+			backboard.style.transform = `translate(0, 0px)`
+		}
 	}else{
 		backboard.classList.remove('fixed');
-		document.body.classList.remove('bg');		
+		document.body.classList.remove('bg');
 		t1.style.opacity = `0`;
 		t2.style.opacity = `0`;
 		t3.style.opacity = `0`;
-	}
-
-	// text 패럴렉스 영역 끝나면
-	if(window.scrollY+winHi >= parallax.offsetTop+parallax.clientHeight){
-		backboard.classList.remove('fixed');
-		document.body.classList.remove('bg');
-		backboard.style.transform = `translate(0, ${parallax.clientHeight-winHi}px)`
-	}else{
-		backboard.style.transform = `translate(0, 0px)`
-	}
+	}	
 	// [E] TEXT 패럴렉스	
 	
 	// 위로가기 버튼 나타나기
 	(window.scrollY > 500) ? goTop.classList.add("show") : goTop.classList.remove("show");
-
 	// 위로가기 버튼 이미지 필터 반전
-	if(parallaxArea >= winHi){
-		goTop.classList.remove('inv');
-	}else{
-		goTop.classList.add('inv');
-	}
-	
+	(parallaxArea >= winHi) ? goTop.classList.remove('inv') : goTop.classList.add('inv');	
 	// 스크롤 맨 아래 감지
 	(window.scrollY+winHi >= document.body.scrollHeight-50) ? goTop.classList.add("foot") : goTop.classList.remove("foot");
 });
