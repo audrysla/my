@@ -57,7 +57,7 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
 .flexWrap ul{flex:1;}
 .about{background:#fff;}
 .about .thumb{position:relative;display: flex;align-items: center;}
-.about .thumb img{position:absolute;top:0;left:0;}
+.about .thumb img{position:absolute;top:0;left:0;height: 100%;}
 .about ul{display:flex;flex-wrap: wrap;max-width: 800px;}
 .about ul li{flex:1 1 33%;}
 .about ul span{display:flex;align-items: center;font-size:20px;text-align: left;font-weight:bold;}
