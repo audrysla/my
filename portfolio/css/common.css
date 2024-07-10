@@ -42,8 +42,8 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
     transition:height .3s;
 }
 .main .innerWrap{transition:transform .6s;}
-.main em{font-family: 'Noto Sans KR', sans-serif;display:block;text-align: center;font-weight:900;font-size:52px;color:#fff;text-shadow: 3px 3px rgba(100,100,100,.5)}
-.main em i{font-weight:600;font-size:70%}
+.main em{font-family: 'Noto Sans KR', sans-serif;display:block;text-align: center;font-weight:600;font-size:44px;color:#fff;text-shadow: 3px 3px rgba(100,100,100,.5)}
+.main em i{font-size:70%}
 .main p{line-height:38px;font-size:1.3rem;margin-top:50px;color:#fff;text-align:center;}
 /* .main.static .innerWrap{transform: translateY(-100px);} */
 .arrow{display:block;width:86px;margin:20px auto 0;text-align:center;color:#fff;}
