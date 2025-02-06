@@ -47,10 +47,25 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
 .main p{line-height:38px;font-size:1.3rem;margin-top:50px;color:#fff;text-align:center;}
 /* .main.static .innerWrap{transform: translateY(-100px);} */
 .arrow{display:block;width:86px;margin:20px auto 0;text-align:center;color:#fff;}
-.arrow span{
+.arrow span{    
     font-size:86px !important;font-weight:bold;opacity: .1;
     transform: rotate(90deg);
     animation:arrowdown 2s infinite
+}
+@keyframes arrowdown1 {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(40px);
+    }
+   
+}
+.arrow span svg{
+    fill: #fff;
+    width: 100px;
+    height: 100px;
+    animation:arrowdown1 1s infinite
 }
 /* .about{background:#F6C026;color:#fff;} */
 .flexWrap{display:flex;justify-content: space-between;gap:20px;}
