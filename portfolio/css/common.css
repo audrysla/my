@@ -220,7 +220,7 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
 .goTop.inv{filter: invert(100%)}
 
 footer{
-    z-index: 200;position: relative;height:120px;
+    z-index: 200;position: relative;height:100%;
     display:flex;justify-content: center;align-items: center; background-color: #F6C026;color:#fff;text-align: center;line-height:22px;
 }
 @media (max-width: 768px){
