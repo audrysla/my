@@ -243,7 +243,7 @@ footer{
     h1{font-size:18px;text-align: center;}
 
     .about .thumb{margin-bottom:40px;height:200px;}
-    .about .thumb img{width:100%;}
+    .about .thumb img{left:50%;transform:translateX(-50%)}
     .about ul span{margin-bottom:5px;font-size: 18px;font-family: 'Nanum Gothic', sans-serif;}
     .about ul span em{margin-right:5px;}
     .about ul li{
