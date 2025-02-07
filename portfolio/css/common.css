@@ -114,6 +114,10 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
 .work_list .thumb{
     position:relative;display:block;flex-basis:230px;height:230px;overflow:hidden;border-radius:10px;box-shadow: 2px 5px 15px rgba(100,100,100,.5);    
 }
+.work_list .multicamp img{
+    width:100% !important;
+    height:100%
+}
 @keyframes bounce {
     0% {
         transform: translateY(0px);
