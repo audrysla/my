@@ -87,7 +87,7 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
 .about ul li:nth-child(1) > em{padding-bottom:50px}
 
 .skill{background:#ED7458;color:#fff;}
-.skill ul li{position:relative;display:flex;gap: 10px;}
+.skill ul li{position:relative;display:flex;gap: 10px;align-items: center;}
 .skill ul li+li{margin-top:15px;}
 .skill ul li em{width:100px;display:block;text-align: right;}
 .skill ul li em.per{width:26px;color:#fff;font-size:14px;white-space: nowrap;}
@@ -272,7 +272,7 @@ footer{
         position:absolute;z-index:1;width: 80px;
         text-align: left;color:#ec6344;        
     }
-    .skill ul li em:nth-child(1){left:5px;font-size: 14px;}
+    .skill ul li em:nth-child(1){left:8px;font-size: 14px;}
     .skill ul li em.per{right:5px;text-align: right;text-shadow: 1px 1px 6px rgba(100,100,100,.5);}
     .work_list li{
         display:block;border-bottom: 1px solid;
