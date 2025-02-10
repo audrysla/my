@@ -1,3 +1,8 @@
+/* 
+	2024-10 개발
+	풀페이지 배경 고정 패럴랙스 스크롤링 기능 구현을 시도함 코드 정리 필요.
+*/
+
 const isMobile = () => {
 	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
 }
