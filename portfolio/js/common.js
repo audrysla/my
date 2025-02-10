@@ -67,7 +67,7 @@ const interval = (num, index) =>{
 }
 
 // [S] 스킬 패럴렉스
-const per = [90, 90, 75, 90, 90, 45, 45, 65]	// 스킬 활용도 점수%
+const per = [90, 90, 75, 90, 90, 55, 55, 65]	// 스킬 활용도 점수%
 let x = true;
 let i = document.querySelectorAll(".skill ul li i");
 let t = document.querySelectorAll(".skill ul li .per");
