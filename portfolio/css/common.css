@@ -212,13 +212,14 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
     display:block;font-family: "NexonLv1Gothic";
     font-size:30px;color:#fff;
     opacity:0;
+    transition:transform 0.05s linear;
 }
 .parallax .backboard span i{display:block;}
 .parallax .backboard.fixed{
     position:fixed;top:0;
     width:100%;
 }
-.t5 i{transition: transform .3s;}
+/* .t5 i{transition:transform 0.05s linear;} */
 
 .goTop{z-index:1000;position:fixed;bottom:50px;right:30px;width:60px;height:60px;transform: translateY(200%);transition: transform .3s;}
 .goTop img{width:100%;}
