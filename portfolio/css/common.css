@@ -181,7 +181,7 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
     font-size:100px !important;position:absolute;
     transform:translateX(-50%);
     opacity:.3;
-    /* transition:transform 0.05s linear; */
+    transition:transform 0.05s linear;
 }
 .parallax-div span:nth-child(1){top:75%;left:0%}
 .parallax-div span:nth-child(2){top:30%;left:10%;font-size:150px !important;}
@@ -212,7 +212,7 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
     display:block;font-family: "NexonLv1Gothic";
     font-size:30px;color:#fff;
     opacity:0;
-    /* transition:transform 0.05s linear; */
+    transition:transform 0.05s linear;
 }
 .parallax .backboard span i{display:block;}
 .parallax .backboard.fixed{
