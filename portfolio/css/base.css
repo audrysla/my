@@ -23,13 +23,6 @@ body{
 	-ms-use-select: none;
 	user-select: none;
 } 
-html, body{
-	/* 바운스 스크롤로 인한 리플로우 방지 */
-  overscroll-behavior-y: none;
-  
-  /* Y축 스크롤 제어권을 브라우저 스레드에 명확히 위임 */
-  touch-action: pan-y;
-}
 section,nav,article,aside,hgroup,header,footer {display:block}
 input, textarea, select, button, table, select {line-height:inherit;}
 img, fieldset {border:0;vertical-align:top;} 
