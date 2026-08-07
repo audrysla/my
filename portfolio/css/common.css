@@ -181,7 +181,7 @@ article h2{position:relative;margin-bottom:60px;font-size:38px;font-weight:bold;
     font-size:100px !important;position:absolute;
     transform:translateX(-50%);
     opacity:.3;
-    transition:transform .3s;
+    /* transition:transform .3s; */
 }
 .parallax-div span:nth-child(1){top:75%;left:0%}
 .parallax-div span:nth-child(2){top:30%;left:10%;font-size:150px !important;}
