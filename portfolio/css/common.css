@@ -243,8 +243,7 @@ footer{
     .main p {
         line-height: 24px;
         font-size: 1rem;
-    }
-    .main p br:nth-child(2){display:none}
+    }    
     h1{font-size:18px;text-align: center;}
 
     .about .thumb{margin-bottom:40px;height:200px;}
@@ -290,4 +289,7 @@ footer{
     }   
     .work_list li:nth-child(1) .thumb{animation-play-state:paused;}
     .goTop{right:15px;bottom:15px;width:50px;height:50px;}
+}
+@media (max-width: 540px){
+    .main p br:nth-child(2){display:none}
 }
